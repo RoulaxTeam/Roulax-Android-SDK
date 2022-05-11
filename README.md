@@ -4,8 +4,9 @@
 ## 使用方式
 
 ### 添加依赖库
-1、联系Roulax商务或者Roulax的技术支持同学，获取Roulax SDK android版本的AAR支持，当前版本为1.0.11 ，目前提供支持是androidx版本的，如果需要非androidx版本，请联系Roulax平台。
-2、获取到之后，根据项目实际情况，在项目根目录添加RoulaxSDK的库引用。
+1、联系Roulax商务或者Roulax的技术支持同学，获取Roulax SDK android版本的AAR支持，当前版本为1.0.11 ，目前提供支持是androidx版本的，如果需要非androidx版本，请联系Roulax平台。  
+2、获取到之后，根据项目实际情况，在项目根目录添加RoulaxSDK的库引用。  
+
 下载地址：[Roulax-SDK-Core](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/main_1.0.11/rsdk_1011_202205091149.aar)
 
 ### 添加SDK依赖的第三方库

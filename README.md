@@ -9,21 +9,18 @@
 
 ### 添加SDK依赖的第三方库
 
-  	```
-      implementation("com.squareup.okhttp3:okhttp:4.9.3")
-      implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+   	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
+
 
 
 ### 添加SDK依赖的权限申明
 
-  	```
-  	   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+  	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
 
 ### SDK混淆规则
-
-    ```
      #  不混淆JS
 	-keepattributes *Annotation*
 	-keepattributes *JavascriptInterface*
@@ -57,7 +54,7 @@
                         Log.e("RSDK", "Roulax sdk init failure");
                     }
                 });  
-}
+	}
 
 
 ## 互动广告
@@ -69,7 +66,7 @@
 互动广告初始化，你可以在需要展示互动广告之前初始化<br>
 **YOU_UNIT_ID**:是互动广告的ID，请在开发者后台或者找商务提供。
 
-    ···
+
      RIconInteractiveAd interactiveAd = new RIconInteractiveAd("YOU_UNIT_ID");
         interactiveAd.setRIconInteractiveAdListener(new RIconInteractiveAd.RIconInteractiveAdListener() {
             @Override
@@ -107,8 +104,8 @@
             }
 			
             @Override
-            public void onInteractiveShowFailed(RError error) {               Log.i("RSDK", "onInteractiveShowFailed");
-
+            public void onInteractiveShowFailed(RError error) {               
+				Log.i("RSDK", "onInteractiveShowFailed");
             }
 
             @Override
@@ -127,7 +124,6 @@
 
 您可以在需要展示互动广告之前，提前请求缓存好互动广告的相关信息，等需要展示的时候，可以即时展示）。
 
-	···
 	 interactiveAd.request();
 
 
@@ -135,16 +131,15 @@
 
 广告展示的逻辑。
 
- 	···
  	 if (interactiveAd.isReady()) {
-           interactiveAd.show(MainActivity.this);
-      }
+         interactiveAd.show(MainActivity.this);
+     }
 
 
 
 
 
-# 隐私-GDPR
+## 隐私-GDPR
 
 
 Roulax 会收集 Language、设备信息、GAID 这些信息并上报这些数据，用于确定用户ID。如果应用需要上架到 GooglePlay，您需要在 GooglePlay 开发者控制台上和隐私政策协议中声明使用条款，如有疑问，请联系Roulax平台。

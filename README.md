@@ -1,4 +1,3 @@
-
 # Roulax SDK 集成文档 V1.0.0_ANDROID
 
 ## 使用方式
@@ -7,10 +6,13 @@
 1，联系Roulax商务或者Roulax的技术支持同学，获取Roulax SDK android版本的AAR支持，目前版本为1.0.0  目前提供支持是androidx版本的，如果需要非androidx版本，请联系Roulax平台。
 获取到之后，根据项目实际情况，在项目根目录添加RoulaxSDK的库引用。
 
+
 ### 添加SDK依赖的第三方库
 
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
-	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
+   	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
+
+
 
 ### 添加SDK依赖的权限申明
 
@@ -133,12 +135,19 @@
          interactiveAd.show(MainActivity.this);
      }
 
+
+
+
+
 ## 隐私-GDPR
+
+
 Roulax 会收集 Language、设备信息、GAID 这些信息并上报这些数据，用于确定用户ID。如果应用需要上架到 GooglePlay，您需要在 GooglePlay 开发者控制台上和隐私政策协议中声明使用条款，如有疑问，请联系Roulax平台。
 
-## 聚合平台支持
 
-| 聚合平台|支持广告样式|接入文档|
-| -------------|:-------------:|:-------------:    |
-| TopOn| 插屏 | [TopOn-Network](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/Max/RSDK-MAX.md) |
-| Max  | 插屏 | [Max-Network](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/Max/RSDK-MAX.md) |
+## Network
+
+|  聚合平台   | 接入文档  |
+|  ----  | ----  |
+| Max  | [ click ](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/Max/RSDK-MAX.md) |
+| Topon  | [ click ](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/Max/RSDK-MAX.md)  |

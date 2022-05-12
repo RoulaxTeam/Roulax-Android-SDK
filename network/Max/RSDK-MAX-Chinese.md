@@ -3,7 +3,7 @@
 [English Document](RSDK-MAX-English.md)
 
 ## 更新日志
-| 版本 | 适配器 |
+| RoulaxSDK版本 | Adapter版本 |
 |--|--|
 | 1.0.11 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar) |
 

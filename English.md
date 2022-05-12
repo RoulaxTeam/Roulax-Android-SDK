@@ -1,6 +1,8 @@
 
 
-# Roulax SDK Integrated Documentation V1.0.11_ANDROID
+# Roulax SDK Integrated Documentation V1.0.X_ANDROID  
+
+[中文文档](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/README.md)  
 
 ## How to use
 
@@ -145,7 +147,7 @@ The former is the latest version of the adapter, if you need a historical versio
 | Max  | Interstitial | [Max-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/Max/RSDK-MAX.md) |[Max-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-network-max-release.aar)|
 
 
-## 更新日志
-| 日期 | 版本 | 日志 |
+## Update Note
+| Date | Version | Log |
 |--|--|--|
 | 2022-05-11 | 1.0.11 | Roulax SDK Release |

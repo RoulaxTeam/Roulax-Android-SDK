@@ -4,7 +4,7 @@
 
 [中文文档](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/README.md)  
 
-## Update Note
+### Update Note
 | Date | Version | Log |
 |--|--|--|
 | 2022-05-11 | 1.0.11 | Roulax SDK Release |

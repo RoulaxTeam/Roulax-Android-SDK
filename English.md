@@ -4,10 +4,15 @@
 
 [中文文档](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/README.md)  
 
+## Update Note
+| Date | Version | Log |
+|--|--|--|
+| 2022-05-11 | 1.0.11 | Roulax SDK Release |
+
 ## How to use
 
 ### Add dependency library
-1、Contact Roulax business or Roulax technical support classmates to obtain AAR support for the android version of the Roulax SDK. The current version is 1.0.11, and the current support is the androidx version. If you need a non-androidx version, please contact the Roulax platform.  
+1、Contact Roulax business or Roulax technical support classmates to obtain AAR support for the android version of the Roulax SDK. Currently, the androidx version is provided. If you need a non-androidx version, please contact the Roulax platform.  
 2、After obtaining, according to the actual situation of the project, add the library reference of RoulaxSDK in the project root directory.
 
 <!-- 下载地址：[Roulax-SDK-Core](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/main_1.0.11/rsdk_1011_202205091149.aar) -->
@@ -146,9 +151,3 @@ The former is the latest version of the adapter, if you need a historical versio
 | -------------|:-------------:|:-------------: |:-------------: |
 | TopOn| Interstitial | [TopOn-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/topon/RoulaxTopOnAdapter.md) |[TopOn-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-network-max-release.aar)|
 | Max  | Interstitial | [Max-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/Max/RSDK-MAX-English.md) |[Max-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar)|
-
-
-## Update Note
-| Date | Version | Log |
-|--|--|--|
-| 2022-05-11 | 1.0.11 | Roulax SDK Release |

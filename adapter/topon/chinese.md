@@ -40,7 +40,7 @@ v5.6.4 及以上版本
 
 ### 2. 下载Roulax SDK
 
-### 3. 下载Roulax-Adapter-TopOn
+### 3. 下载[Roulax-Adapter-TopOn](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_0.0.3-release.aar)
 
 ## 检查是否接入成功
 

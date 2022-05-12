@@ -2,6 +2,11 @@
 
 [中文文档](RSDK-MAX-Chinese.md)
 
+## Update Note
+| RoulaxSDK Version | Adapter Version |
+|--|--|
+| 1.0.11 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar) |
+
 ### Support ads
 
 1. Interstitial

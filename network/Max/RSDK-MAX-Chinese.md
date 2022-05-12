@@ -2,6 +2,11 @@
 
 [English Document](RSDK-MAX-English.md)
 
+## 更新日志
+| 版本 | 适配器 |
+|--|--|
+| 1.0.11 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar) |
+
 ### 支持的广告类型
 
 1. 插屏广告
@@ -63,3 +68,4 @@ dependencies {
     implementation (name: "rad-adapter-max", ext: "aar")
 }
 ```
+

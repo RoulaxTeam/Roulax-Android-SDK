@@ -140,7 +140,7 @@
 Roulax 会收集 Language、设备信息、GAID 这些信息并上报这些数据，用于确定用户ID。如果应用需要上架到 GooglePlay，您需要在 GooglePlay 开发者控制台上和隐私政策协议中声明使用条款，如有疑问，请联系Roulax平台。
 
 ## 聚合平台支持
-当前都为最新版本适配器，如您需要历史版本，请前往对应netowrk document进行下载
+当前为最新版本适配器，如您需要历史版本，请前往对应netowrk document进行下载
 | 聚合平台|支持广告样式|接入文档|下载地址|
 | -------------|:-------------:|:-------------: |:-------------: |
 | TopOn| 插屏 | [TopOn-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/topon/RoulaxTopOnAdapter.md) |[TopOn-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-network-max-release.aar)|

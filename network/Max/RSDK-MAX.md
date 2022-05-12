@@ -58,6 +58,6 @@ repositories {
 ```
 dependencies {  
     // ... other project dependencies
-    implementation (name: "rad-network-max-release", ext: "aar")
+    implementation (name: "rad-adapter-max", ext: "aar")
 }
 ```

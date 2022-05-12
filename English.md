@@ -22,7 +22,7 @@
 
 
 ### SDK Obfuscation Rules
-     #  不混淆JS
+     #  Don't obfuscate JS
 	-keepattributes *Annotation*
 	-keepattributes *JavascriptInterface*
 	-keep class com.rad.adlibrary.RSDKJavaScriptInterface{
@@ -79,8 +79,9 @@ Interactive ad initialization, you can initialize it before you need to display 
             public void onLoadFailed(RError error) {
                 Log.i("RSDK", "Load failure");
             }
+
 			/***
-			* 互动游戏的展示成功
+			* Showcase success of interactive games
 			*/
             @Override
             public void onShowSuccess() {
@@ -97,7 +98,7 @@ Interactive ad initialization, you can initialize it before you need to display 
                  Log.i("RSDK", "onClose");
             }
 			/***
-			* 互动游戏成功之后的展示
+			* Display after a successful interactive game
 			*/
             @Override
             public void onInteractiveShowSuccess() {

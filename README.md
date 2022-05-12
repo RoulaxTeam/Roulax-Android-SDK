@@ -144,7 +144,7 @@ Roulax 会收集 Language、设备信息、GAID 这些信息并上报这些数�
 | 聚合平台|支持广告样式|接入文档|下载地址|
 | -------------|:-------------:|:-------------: |:-------------: |
 | TopOn| 插屏 | [TopOn-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/topon/RoulaxTopOnAdapter.md) |[TopOn-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-network-max-release.aar)|
-| Max  | 插屏 | [Max-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/Max/RSDK-MAX.md) |[Max-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar)|
+| Max  | 插屏 | [Max-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/network/Max/RSDK-MAX-Chinese.md) |[Max-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar)|
 
 
 ## 更新日志

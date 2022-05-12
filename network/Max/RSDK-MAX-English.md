@@ -1,5 +1,7 @@
 # Integrate Roulax by Max custom Networks
 
+[Chinese Document](RSDK-MAX-Chinese.md)
+
 ### Support ads
 
 1. Interstitial

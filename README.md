@@ -1,6 +1,8 @@
 
 
-# Roulax SDK 集成文档 V1.0.0_ANDROID
+# Roulax SDK 集成文档 V1.0.X_ANDROID  
+
+[English Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/English.md)  
 
 ## 使用方式
 

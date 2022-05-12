@@ -40,7 +40,7 @@ Reference [TopOn Integration](https://docs.toponad.com/#/en-us/android/GetStarte
 
 ### 2. Download Roulax SDK
 
-### 3. Download Roulax TopOn Network Adapter
+### 3. Download [Roulax-Adapter-TopOn](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_0.0.3-release.aar)
 
 ## Check integrate successful
 

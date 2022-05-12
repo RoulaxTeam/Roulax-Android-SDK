@@ -1,5 +1,8 @@
 # Integrate Roulax by TopOn custom Networks
 
+## Language
+* ch [中文](chinese.md)
+
 ### Support ads
 1. Interstitial
 
@@ -17,7 +20,7 @@ In the TopOn dashboard, select [Network](https://app.toponad.com/m/network), cli
 1. Fill in the Network Name, such as "Roulax"
 2. Fill **“com.rad.adapter.topon.RoulaxInterstitialAdapter”** in the Adaper's Class Name > Android > Interstitial
 
-![](ra_network.png)
+![](1.png)
 ### 2.Add the Ad Sources for Roulax Network
 You can add the Ad Source of the **Roulax Network** on the **Mediation** pages of the TopOn, need to fill in the **Parameters**. 
 
@@ -29,7 +32,7 @@ The Parameters of the Ad Source must be the json format below:
     "inter_unit_id": "your roulax interstitial unitId"
 }
 </pre>
-![](ra_ad_source.png)
+![](2.png)
 ## Integrate in Android
 
 ### 1. Integrate TopOn in Android
@@ -39,10 +42,10 @@ Reference [TopOn Integration](https://docs.toponad.com/#/en-us/android/GetStarte
 
 ### 3. Download Roulax TopOn Network Adapter
 
-<!--## Check integrate successful-->
+## Check integrate successful
 
-<!--After integrate is successful，If request Interstitial ads, filter  `RSDK` in logcat will have logs like these:-->
-
-<!--```-->
-
-<!--```-->
+After integrate is successful，If request Interstitial ads, filter  `RSDK` in logcat will have logs like these:
+<pre>
+D/RSDK: Roulax Network-TopOn-Interstitial init success
+D/RSDK: on SDK-Core init success
+</pre>

@@ -1,6 +1,6 @@
 # Integrate Roulax by Max custom Networks
 
-[Chinese Document](RSDK-MAX-Chinese.md)
+[中文文档](RSDK-MAX-Chinese.md)
 
 ### Support ads
 

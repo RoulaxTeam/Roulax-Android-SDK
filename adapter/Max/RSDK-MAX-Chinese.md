@@ -51,7 +51,7 @@
 
 ### 2. 添加库依赖
 
-把Network Adapter的aar文件放入你项目中的`libs`文件夹下, 然后在`build.gradle`文件中加入以下代码:
+把Network Adapter的aar文件和RoulaxSDK的aar放入你项目中的`libs`文件夹下, 然后在`build.gradle`文件中加入以下代码:
 
 ```
 repositories {  
@@ -65,7 +65,8 @@ repositories {
 ```
 dependencies {  
     // ... other project dependencies
-    implementation (name: "rad-adapter-max", ext: "aar")
+    implementation (name: "rad_adapter_max-release", ext: "aar")
+    implementation (name: "rsdk-release", ext: "aar")
 }
 ```
 

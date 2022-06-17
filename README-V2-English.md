@@ -2,7 +2,7 @@
 
 # Rouax SDK Integration Documentation V2.0.X_ANDROID
 
-[中文文档](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/README-V2.md.md)  
+[中文文档](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/README-V2.md)  
 
 ### Update Note
 | Date | Version | Log |

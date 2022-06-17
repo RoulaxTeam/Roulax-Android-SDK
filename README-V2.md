@@ -24,7 +24,7 @@
 
 ### 添加SDK依赖的权限申明
 
-  	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
 
@@ -195,6 +195,304 @@
         }
     })
 
+## 激励视频
+激励视频是Roulax平台效果非常好的广告形式，用户可以通过观看一段广告视频而获取奖励，由于广告视频素材非常具有创意和吸引力，因此会引起很多用户的兴趣，进而下载广告产品
+#### 广告效果样式：
+
+#### 请求广告
+
+```
+RXSDK.createRXSdkAd().loadRewardVideo("unit_id", object : RXSdkAd.RXRewardVideoAdListener {
+    override fun success(adInfo: RXAdInfo, rewardVideoAd: RXRewardVideoAd) {
+        
+    }
+
+    override fun failure(adInfo: RXAdInfo, error: RError) {
+
+    }
+
+})
+
+```
+| 参数 | 含义 |
+| --- | --- |
+| YOU_UNIT_ID | 激励广告的ID，请在开发者后台或者找商务提供 |
+| RXRewardVideoAdListener | 激励视频请求广告回调 |
+
+#### RXRewardVideoAd说明
+
+| 方法 | 含义 |
+| :---: | :---: |
+| fun setRewardVideoEventListener(listener: RXRewardVideoEventListener)|设置广告交互监听器|
+| fun isReady(): Boolean | 判断广告是否准备 |
+| fun show() | 展示激励视频广告 |
+| fun release() | 销毁广告并释放资源 |
+| fun setAlertDialogText(text: String) | 激励视频提前关系弹窗提示 |
+
+#### RXRewardVideoEventListener说明
+
+| 方法 | 含义 |
+| :---: | :---: |
+| fun onAdShow(adInfo: RXAdInfo) | 广告展示回调 |
+| fun onAdShowFail(adInfo: RXAdInfo, error: RError) | 广告展示失败回调，附带原因 |
+| fun onAdClick(adInfo: RXAdInfo) | 广告点击回调 |
+| fun onAdClose(adInfo: RXAdInfo) | 广告关闭回调 |
+| fun onRewarded(adInfo: RXAdInfo) | 奖励验证回调，开发者在需要在此回调中做奖励的发放 |
+
+#### 示例代码
+
+```
+RXSDK.createRXSdkAd().loadRewardVideo("unit_id", object : RXSdkAd.RXRewardVideoAdListener {
+    override fun success(adInfo: RXAdInfo, rewardVideoAd: RXRewardVideoAd) {
+        rewardVideoAd.setRewardVideoEventListener(object : RXRewardVideoEventListener {
+            override fun onAdShow(adInfo: RXAdInfo) {
+
+            }
+
+            override fun onAdShowFail(adInfo: RXAdInfo, error: RError) {
+
+            }
+
+            override fun onAdClick(adInfo: RXAdInfo) {
+
+            }
+
+            override fun onAdClose(adInfo: RXAdInfo) {
+
+            }
+
+            override fun onRewarded(adInfo: RXAdInfo) {
+                
+            }
+
+        })
+        if (rewardVideoAd.isReady()) {
+            rewardVideoAd.show()
+        }
+    }
+
+    override fun failure(adInfo: RXAdInfo, error: RError) {
+
+    }
+
+})
+```
+
+## 插屏
+插屏分为全屏视频和插屏，分别为图片+视频、仅图片。适用于更多应用场景切换时使用，如：应用内视图切换、游戏过关或失败、图书翻页、应用退出等。
+#### 广告效果样式：
+
+#### 请求广告
+    RXSDK.createRXSdkAd().loadInterstitial("unit_id", object : RXSdkAd.RXInterstitialAdListener {
+	    override fun success(adInfo: RXAdInfo, interAd: RXInterstitialAd) {
+			// load ad success, return RXInterstitialAd
+	    }
+
+        override fun failure(adInfo: RXAdInfo, error: RError) {
+            
+        }
+    })
+
+#### RXInterstitialAd说明
+
+| Method | Description |
+| :---: | :---: |
+| fun setInterstitialEventListener(listener: RXInterstitialEventListener)|设置广告交互监听器|
+| fun isReady(): Boolean | 判断广告是否准备 |
+| fun show() | 展示插屏广告 |
+| fun release() | 销毁广告并释放资源 |
+
+#### RXInterstitialEventListener说明
+
+| Method | Description |
+| :---: | :---: |
+| fun onAdShow(adInfo: RXAdInfo) | 广告展示回调 |
+| fun onAdShowFail(adInfo: RXAdInfo, error: RError) | 广告展示失败回调，附带原因 |
+| fun onAdClick(adInfo: RXAdInfo) | 广告点击回调 |
+| fun onAdClose(adInfo: RXAdInfo) | 广告关闭回调 |
+
+#### 示例代码
+
+```
+RXSDK.createRXSdkAd().loadInterstitial("unit_id", object : RXSdkAd.RXInterstitialAdListener {
+        override fun success(adInfo: RXAdInfo, interAd: RXInterstitialAd) {
+            interAd.setInterstitialEventListener(object : RXInterstitialEventListener {
+                override fun onAdShow(adInfo: RXAdInfo) {
+                    
+                }
+
+                override fun onAdShowFail(adInfo: RXAdInfo, error: RError) {
+                    
+                }
+
+                override fun onAdClick(adInfo: RXAdInfo) {
+                    
+                }
+
+                override fun onAdClose(adInfo: RXAdInfo) {
+                    
+                }
+
+            })
+            if (interAd.isReady()) {
+                interAd.show()
+            }
+        }
+
+        override fun failure(adInfo: RXAdInfo, error: RError) {
+
+        }
+
+})
+```
+
+### Banner
+横幅广告是移动广告中最传统的广告类型。它很容易实现，而且用户可接受度高。它是超休闲游戏和工具的良好实现形式。
+##### 加载广告
+
+```
+RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAdListener {
+    override fun success(adInfo: RXAdInfo, bannerAd: RXBannerAd) {
+        
+    }
+
+    override fun failure(adInfo: RXAdInfo, error: RError) {
+
+    }
+
+})
+```
+
+##### RXBannerAd
+
+| 方法 | 描述|
+| :---: | :---: |
+| fun setRXBannerListener(listener: RXBannerEventListener)|Register interactive callback for banner|
+| fun render(bannerType: Int) | Render the view of banner|
+
+##### BannerType
+
+| 类型 | 宽高比|
+| :---: | :---: |
+| BannerType.SMALL | 330 : 60 |
+| BannerType.MEDIUM | 660 : 255 |
+| BannerType.LARGE | 660 : 295 |
+
+##### RXBannerEventListener
+
+| 方法 | 描述 |
+| :---: | :---: |
+| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
+| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
+| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
+| fun onRenderSuccess(pView: View) | Ad render success callback with the banner's view |
+| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | Ad render fail callback with reason |
+
+##### 代码样例
+
+```
+RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdListener {
+            override fun failure(adInfo: RXAdInfo, error: RError) {
+               
+            }
+
+            override fun success(adInfo: RXAdInfo, bannerAd: RXBannerAd) {
+				bannerAd.setRXBannerListener(object : RXBannerEventListener {
+                        override fun onAdClick(pAdInfo: RXAdInfo) {
+                            
+                        }
+
+                        override fun onAdClose(pAdInfo: RXAdInfo) {
+                           
+                        }
+
+                        override fun onAdShow(pAdInfo: RXAdInfo) {
+                            
+                        }
+
+                        override fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) {
+                            
+                        }
+
+                        override fun onRenderSuccess(pView: View) {
+                            findViewById<ViewGroup>(R.id.container_banner_small).addView(pView)
+                        }
+            	}
+				bannerAd.render(BannerType.SMALL)
+			}
+	})
+
+```
+
+### Native
+原生广告是目前最流行的广告类型之一。Roulax SDK将向您的应用程序返回创意材料信息。你将能够把它放到你的产品中，进而创造最佳的用户体验。
+##### 加载广告
+
+```
+ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd.RXNativeAdListener {
+            override fun failure(adInfo: RXAdInfo, errorList: List<RError>) {
+                
+            }
+
+            override fun success(adInfo: RXAdInfo, nativeAdList: List<RXNativeAd>) {
+               
+            }
+		})
+```
+
+##### RXNativeAd
+
+| 方法 | 描述|
+| :---: | :---: |
+| fun setRXNativeListener(listener: RXNativeEventListener)|Register interactive callback for native ad|
+| fun render() | Render the view of native ad|
+
+##### RXNativeEventListener
+
+| 方法 | 描述|
+| :---: | :---: |
+| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
+| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
+| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
+| fun onRenderSuccess(pView: View) | Ad render success callback with the native ad's view |
+| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | Ad render fail callback with reason |
+
+##### 代码样例
+
+```
+RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd.RXNativeAdListener {
+            override fun failure(adInfo: RXAdInfo, errorList: List<RError>) {
+                
+            }
+
+            override fun success(adInfo: RXAdInfo, nativeAdList: List<RXNativeAd>) {
+                if (nativeAdList.size >= 0) {
+					nativeAdList[0].setRXNativeListener(object : RXNativeEventListener {
+                            override fun onAdClick(pAdInfo: RXAdInfo) {
+                                
+                            }
+
+                            override fun onAdClose(pAdInfo: RXAdInfo) {
+                               
+                            }
+
+                            override fun onAdShow(pAdInfo: RXAdInfo) {
+                               
+                            }
+
+                            override fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) {
+                               
+                            }
+
+                            override fun onRenderSuccess(pView: View) {
+                                findViewById<ViewGroup>(R.id.container_native).addView(pView)
+                            }
+                        })
+					nativeAdList[0].render()
+                }
+            }
+       })
+```
 
 ## 隐私-GDPR
 Roulax 会收集 Language、设备信息、GAID 这些信息并上报这些数据，用于确定用户ID。如果应用需要上架到 GooglePlay，您需要在 GooglePlay 开发者控制台上和隐私政策协议中声明使用条款，如有疑问，请联系Roulax平台。

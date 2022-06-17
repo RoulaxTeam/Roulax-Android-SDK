@@ -2,7 +2,7 @@
 
 # Roulax SDK 集成文档 V2.0.X_ANDROID  
 
-[English Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/English.md)  
+[English Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/README-V2-English.md)  
 
 ### 更新日志
 | 日期 | 版本 | 日志 |

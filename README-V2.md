@@ -345,7 +345,7 @@ RXSDK.createRXSdkAd().loadInterstitial("unit_id", object : RXSdkAd.RXInterstitia
 })
 ```
 
-### Banner
+## Banner
 横幅广告是移动广告中最传统的广告类型。它很容易实现，而且用户可接受度高。它是超休闲游戏和工具的良好实现形式。
 ##### 加载广告
 
@@ -423,7 +423,7 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdL
 
 ```
 
-### Native
+## Native
 原生广告是目前最流行的广告类型之一。Roulax SDK将向您的应用程序返回创意材料信息。你将能够把它放到你的产品中，进而创造最佳的用户体验。
 ##### 加载广告
 

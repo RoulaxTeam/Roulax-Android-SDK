@@ -387,7 +387,7 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAd
 | fun onRenderSuccess(pView: View) | 广告渲染成功，并且返回渲染成功的View |
 | fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | 广告渲染失败，并且返回错误原因 |
 
-##### 代码样例
+##### 示例代码
 
 ```
 RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdListener {
@@ -456,7 +456,7 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdL
 | fun onRenderSuccess(pView: View) | 广告渲染成功，并且返回渲染成功的View |
 | fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | 广告渲染失败，并且返回失败的原因 |
 
-##### 代码样例
+##### 示例代码
 
 ```
 RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd.RXNativeAdListener {

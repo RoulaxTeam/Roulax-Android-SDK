@@ -29,7 +29,7 @@
 
 
 ### SDK混淆规则
-    # 不混淆JS
+
 	-keep public class com.rad.cache.database.entity.**
 	-keepclassmembers public class com.rad.cache.database.entity.**{
    		public *;

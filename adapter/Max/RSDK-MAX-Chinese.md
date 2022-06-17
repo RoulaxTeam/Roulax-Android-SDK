@@ -5,8 +5,8 @@
 ## 更新日志
 | RoulaxSDK版本 | Adapter版本 |
 |--|--|
-| 1.0.11 | [Roulax-Max-Adapter] |
-| 2.0.00 | [Roulax SDK Release](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max-2.0_release.aar) |
+| 1.0.11 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar)  |
+| 2.0.00 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max-2.0_release.aar) |
 
 ### 支持的广告类型
 

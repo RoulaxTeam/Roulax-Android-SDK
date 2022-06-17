@@ -5,11 +5,11 @@
 ## 更新日志
 | RoulaxSDK版本 | Adapter版本 |
 |--|--|
-| 1.0.11 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar) |
+| 1.0.11 | [Roulax-Max-Adapter] |
 
 ### 支持的广告类型
 
-1. 插屏广告
+1. 激励视频
 
 ### 支持的平台
 
@@ -51,7 +51,7 @@
 
 ### 2. 添加库依赖
 
-把Network Adapter的aar文件放入你项目中的`libs`文件夹下, 然后在`build.gradle`文件中加入以下代码:
+把Network Adapter的aar文件和RoulaxSDK的aar放入你项目中的`libs`文件夹下, 然后在`build.gradle`文件中加入以下代码:
 
 ```
 repositories {  
@@ -65,7 +65,8 @@ repositories {
 ```
 dependencies {  
     // ... other project dependencies
-    implementation (name: "rad-adapter-max", ext: "aar")
+    implementation (name: "rad_adapter_max-release", ext: "aar")
+    implementation (name: "rsdk-release", ext: "aar")
 }
 ```
 

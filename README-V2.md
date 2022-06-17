@@ -29,7 +29,7 @@
 
 
 ### SDK混淆规则
-
+    # 不混淆JS
 	-keep public class com.rad.cache.database.entity.**
 	-keepclassmembers public class com.rad.cache.database.entity.**{
    		public *;
@@ -123,6 +123,7 @@
     mRXSplashAd.setEventListener(object : RXSplashEventListener {
         override fun onShowSuccess(adInfo: RXAdInfo) {
             RXLogUtil.d("Splash onShowSuccess")
+
         }
 
         override fun onShowFailure(adInfo: RXAdInfo, error: RError) {
@@ -147,8 +148,7 @@
 | onDismiss | 广告关闭回调 |
 
 #### 展示广告
-	
-    val splashView = mRXSplashAd.getSplashView(activity)
+	val splashView = mRXSplashAd.getSplashView(activity)
     splashView?.let {
         mSplashContainer.addView(it)
     }?:let {
@@ -178,7 +178,7 @@
 		            RXLogUtil.d("Splash onDismiss")
 		        }
 		    })
-		    val splashView = splashAd.getSplashView(activity)
+			val splashView = splashAd.getSplashView(activity)
 		    splashView?.let {
 		        mSplashContainer.addView(it)
 		    }?:let {
@@ -367,8 +367,8 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAd
 
 | 方法 | 描述|
 | :---: | :---: |
-| fun setRXBannerListener(listener: RXBannerEventListener)|Register interactive callback for banner|
-| fun render(bannerType: Int) | Render the view of banner|
+| fun setRXBannerListener(listener: RXBannerEventListener)|为banner注册交互监听回调|
+| fun render(bannerType: Int) | 渲染banner view |
 
 ##### BannerType
 
@@ -382,11 +382,11 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAd
 
 | 方法 | 描述 |
 | :---: | :---: |
-| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
-| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
-| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
-| fun onRenderSuccess(pView: View) | Ad render success callback with the banner's view |
-| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | Ad render fail callback with reason |
+| fun onAdShow(adInfo: RXAdInfo) | 广告展示回调 |
+| fun onAdClick(adInfo: RXAdInfo) | 广告点击回调 |
+| fun onAdClose(adInfo: RXAdInfo) | 广告关闭回调 |
+| fun onRenderSuccess(pView: View) | 广告渲染成功，并且返回渲染成功的View |
+| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | 广告渲染失败，并且返回错误原因 |
 
 ##### 代码样例
 
@@ -444,18 +444,18 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdL
 
 | 方法 | 描述|
 | :---: | :---: |
-| fun setRXNativeListener(listener: RXNativeEventListener)|Register interactive callback for native ad|
-| fun render() | Render the view of native ad|
+| fun setRXNativeListener(listener: RXNativeEventListener)|为native注册交互监听回调|
+| fun render() | 渲染native view|
 
 ##### RXNativeEventListener
 
 | 方法 | 描述|
 | :---: | :---: |
-| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
-| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
-| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
-| fun onRenderSuccess(pView: View) | Ad render success callback with the native ad's view |
-| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | Ad render fail callback with reason |
+| fun onAdShow(adInfo: RXAdInfo) | 广告展示回调 |
+| fun onAdClick(adInfo: RXAdInfo) | 广告点击回调 |
+| fun onAdClose(adInfo: RXAdInfo) | 广告关闭回调 |
+| fun onRenderSuccess(pView: View) | 广告渲染成功，并且返回渲染成功的View |
+| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | 广告渲染失败，并且返回失败的原因 |
 
 ##### 代码样例
 

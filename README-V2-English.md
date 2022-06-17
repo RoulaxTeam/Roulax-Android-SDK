@@ -30,14 +30,14 @@
 
 ### SDK Obfuscation Rules
 
-	-keep public class com.rad.cache.database.entity.**
-	-keepclassmembers public class com.rad.cache.database.entity.**{
-   		public *;
+	-keep class com.rad.**
+	-keepclassmembers public class com.rad.**{
+        *;
 	}
-	-keep public class com.rad.cache.database.dao.**
-	-keepclassmembers public class com.rad.cache.database.dao.**{
-   		public *;
-	}	
+	-keep interface com.rad.**
+    -keepclassmembers interface com.rad.**{
+        *;
+    }	
 
 
 ## Initialization

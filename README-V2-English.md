@@ -2,7 +2,7 @@
 
 # Rouax SDK Integration Documentation V2.0.X_ANDROID
 
-[English Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/English.md)  
+[中文文档](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/README-V2.md.md)  
 
 ### Update Note
 | Date | Version | Log |
@@ -24,9 +24,9 @@
 
 ### Add SDK-dependent permission declaration
 
-  	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
+    
 
 ### SDK Obfuscation Rules
 
@@ -137,7 +137,7 @@ In the scenario of opening screen advertisement, you can display it when the app
         }
     })
 
-##### RXSplashEventListener
+#### RXSplashEventListener
 | Method | Description |
 | --- | --- |
 | onShowSuccess | Show callback |
@@ -193,6 +193,296 @@ In the scenario of opening screen advertisement, you can display it when the app
         }
     })
 
+## Rewarded Video
+Rewarded Video is one of the best performing Ads formats on the Roulax platform. Users can get rewards by watching a video Ads. The creativity and attention-grabbing nature of the video content attracts users to download the advertised product.
+#### Rewarded Video sample：
+
+#### Load ad
+
+```
+RXSDK.createRXSdkAd().loadRewardVideo("unit_id", object : RXSdkAd.RXRewardVideoAdListener {
+    override fun success(adInfo: RXAdInfo, rewardVideoAd: RXRewardVideoAd) {
+        
+    }
+
+    override fun failure(adInfo: RXAdInfo, error: RError) {
+
+    }
+
+})
+```
+
+#### RXRewardVideoAd
+
+| Method | Description |
+| :---: | :---: |
+| fun setRewardVideoEventListener(listener: RXRewardVideoEventListener)|Register interactive callback for reward video|
+| fun isReady(): Boolean | Return whether the ads ready to display |
+| fun show() | Display the reward video ads |
+| fun release() | Destroy the ad object and release resource |
+| fun setAlertDialogText(text: String) | Set the video pre-close alert content |
+
+#### RXRewardVideoEventListener
+
+| Method | Description |
+| :---: | :---: |
+| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
+| fun onAdShowFail(adInfo: RXAdInfo, error: RError) | Ad showfail callback with reason|
+| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
+| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
+| fun onRewarded(adInfo: RXAdInfo) | Reward verification callback, Developers need to issue rewards in this callback |
+
+#### Sample code
+
+```
+RXSDK.createRXSdkAd().loadRewardVideo("unit_id", object : RXSdkAd.RXRewardVideoAdListener {
+    override fun success(adInfo: RXAdInfo, rewardVideoAd: RXRewardVideoAd) {
+        rewardVideoAd.setRewardVideoEventListener(object : RXRewardVideoEventListener {
+            override fun onAdShow(adInfo: RXAdInfo) {
+
+            }
+
+            override fun onAdShowFail(adInfo: RXAdInfo, error: RError) {
+
+            }
+
+            override fun onAdClick(adInfo: RXAdInfo) {
+
+            }
+
+            override fun onAdClose(adInfo: RXAdInfo) {
+
+            }
+
+            override fun onRewarded(adInfo: RXAdInfo) {
+                
+            }
+
+        })
+        if (rewardVideoAd.isReady()) {
+            rewardVideoAd.show()
+        }
+    }
+
+    override fun failure(adInfo: RXAdInfo, error: RError) {
+
+    }
+
+})
+```
+## Interstitial
+The interstitial is divided into full-screen and half-screen. developers can choose image + video, image only to run. It is suitable for use when switching more application scenarios.
+
+#### Load ad
+    RXSDK.createRXSdkAd().loadInterstitial("unit_id", object : RXSdkAd.RXInterstitialAdListener {
+	    override fun success(adInfo: RXAdInfo, interAd: RXInterstitialAd) {
+			// load ad success, return RXInterstitialAd
+	    }
+
+        override fun failure(adInfo: RXAdInfo, error: RError) {
+            
+        }
+    })
+
+#### RXInterstitialAd
+
+| Method | Description |
+| :---: | :---: |
+| fun setInterstitialEventListener(listener: RXInterstitialEventListener)|Register interactive callback for interstitial|
+| fun isReady(): Boolean | return whether the ads ready to display |
+| fun show() | display the interstitial ads |
+| fun release() | destroy the ad object and release resource |
+
+#### RXInterstitialEventListener
+
+| Method | Description |
+| :---: | :---: |
+| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
+| fun onAdShowFail(adInfo: RXAdInfo, error: RError) | Ad showfail callback with reason|
+| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
+| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
+
+#### Sample code
+
+```
+RXSDK.createRXSdkAd().loadInterstitial("unit_id", object : RXSdkAd.RXInterstitialAdListener {
+        override fun success(adInfo: RXAdInfo, interAd: RXInterstitialAd) {
+            interAd.setInterstitialEventListener(object : RXInterstitialEventListener {
+                override fun onAdShow(adInfo: RXAdInfo) {
+                    
+                }
+
+                override fun onAdShowFail(adInfo: RXAdInfo, error: RError) {
+                    
+                }
+
+                override fun onAdClick(adInfo: RXAdInfo) {
+                    
+                }
+
+                override fun onAdClose(adInfo: RXAdInfo) {
+                    
+                }
+
+            })
+            if (interAd.isReady()) {
+                interAd.show()
+            }
+        }
+
+        override fun failure(adInfo: RXAdInfo, error: RError) {
+
+        }
+
+})
+```
+## Banner
+Banner ads is the most traditional type of advertising for mobile advertising. It is easy to implement and highly user-acceptable. It is a good form of realization for ultra-casual games and tools.
+#### Load ad
+
+```
+RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAdListener {
+    override fun success(adInfo: RXAdInfo, bannerAd: RXBannerAd) {
+        
+    }
+
+    override fun failure(adInfo: RXAdInfo, error: RError) {
+
+    }
+
+})
+```
+
+#### RXBannerAd
+
+| Method | Description |
+| :---: | :---: |
+| fun setRXBannerListener(listener: RXBannerEventListener)|Register interactive callback for banner|
+| fun render(bannerType: Int) | Render the view of banner|
+
+#### BannerType
+
+| Type | Ratio |
+| :---: | :---: |
+| BannerType.SMALL | 330 : 60 |
+| BannerType.MEDIUM | 660 : 255 |
+| BannerType.LARGE | 660 : 295 |
+
+#### RXBannerEventListener
+
+| Method | Description |
+| :---: | :---: |
+| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
+| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
+| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
+| fun onRenderSuccess(pView: View) | Ad render success callback with the banner's view |
+| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | Ad render fail callback with reason |
+
+#### Sample code
+
+```
+RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdListener {
+            override fun failure(adInfo: RXAdInfo, error: RError) {
+               
+            }
+
+            override fun success(adInfo: RXAdInfo, bannerAd: RXBannerAd) {
+				bannerAd.setRXBannerListener(object : RXBannerEventListener {
+                        override fun onAdClick(pAdInfo: RXAdInfo) {
+                            
+                        }
+
+                        override fun onAdClose(pAdInfo: RXAdInfo) {
+                           
+                        }
+
+                        override fun onAdShow(pAdInfo: RXAdInfo) {
+                            
+                        }
+
+                        override fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) {
+                            
+                        }
+
+                        override fun onRenderSuccess(pView: View) {
+                            findViewById<ViewGroup>(R.id.container_banner_small).addView(pView)
+                        }
+            	}
+				bannerAd.render(BannerType.SMALL)
+			}
+	})
+
+```
+
+## Native
+Native Ads is currently one of the most popular Ads types. The Roulax SDK will report back creative material information to your app. You will be able to put it into your product, in turn create the best user experience.
+#### Load ad
+
+```
+ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd.RXNativeAdListener {
+            override fun failure(adInfo: RXAdInfo, errorList: List<RError>) {
+                
+            }
+
+            override fun success(adInfo: RXAdInfo, nativeAdList: List<RXNativeAd>) {
+               
+            }
+		})
+```
+
+#### RXNativeAd
+
+| Method | Description |
+| :---: | :---: |
+| fun setRXNativeListener(listener: RXNativeEventListener)|Register interactive callback for native ad|
+| fun render() | Render the view of native ad|
+
+#### RXNativeEventListener
+
+| Method | Description |
+| :---: | :---: |
+| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
+| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
+| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
+| fun onRenderSuccess(pView: View) | Ad render success callback with the native ad's view |
+| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | Ad render fail callback with reason |
+
+#### Sample code
+
+```
+RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd.RXNativeAdListener {
+            override fun failure(adInfo: RXAdInfo, errorList: List<RError>) {
+                
+            }
+
+            override fun success(adInfo: RXAdInfo, nativeAdList: List<RXNativeAd>) {
+                if (nativeAdList.size >= 0) {
+					nativeAdList[0].setRXNativeListener(object : RXNativeEventListener {
+                            override fun onAdClick(pAdInfo: RXAdInfo) {
+                                
+                            }
+
+                            override fun onAdClose(pAdInfo: RXAdInfo) {
+                               
+                            }
+
+                            override fun onAdShow(pAdInfo: RXAdInfo) {
+                               
+                            }
+
+                            override fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) {
+                               
+                            }
+
+                            override fun onRenderSuccess(pView: View) {
+                                findViewById<ViewGroup>(R.id.container_native).addView(pView)
+                            }
+                        })
+					nativeAdList[0].render()
+                }
+            }
+       })
+```
 
 
 ## Privacy-GDPR

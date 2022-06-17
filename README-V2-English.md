@@ -108,7 +108,7 @@ In the scenario of opening screen advertisement, you can display it when the app
 | failure | The ad request failure callback The returned error message (RError) indicates the reason for the ad request failure |
 | timeout | Open screen ad loading timeout callback |
 
-##### RXSplashAd
+#### RXSplashAd
 
 | Method | Description |
 | --- | --- |
@@ -116,7 +116,7 @@ In the scenario of opening screen advertisement, you can display it when the app
 | fun getSplashView(activity: Activity): View? | Get Splash Ads |
 | fun setEventListener(eventListener: RXSplashEventListener) | Set up ad interaction listeners |
 
-##### Set up ad interaction listeners
+#### Set up ad interaction listeners
 
     mRXSplashAd.setEventListener(object : RXSplashEventListener {
         override fun onShowSuccess(adInfo: RXAdInfo) {

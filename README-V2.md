@@ -7,7 +7,7 @@
 ### 更新日志
 | 日期 | 版本 | 日志 |
 |--|--|--|
-| 2022-05-17 | 2.0.00 | Roulax SDK Release |
+| 2022-06-17 | 2.0.00 | Roulax SDK Release |
 
 ## 使用方式
 
@@ -29,7 +29,7 @@
 
 
 ### SDK混淆规则
-    # 不混淆JS
+    
 	-keep public class com.rad.cache.database.entity.**
 	-keepclassmembers public class com.rad.cache.database.entity.**{
    		public *;
@@ -110,7 +110,7 @@
 | failure | 广告请求失败回调 返回的错误信息(RError)表示广告请求失败的原因 |
 | timeout | 开屏广告加载超时回调 |
 
-##### RXSplashAd说明
+#### RXSplashAd说明
 
 | 方法 | 含义 |
 | --- | --- |
@@ -118,12 +118,11 @@
 | fun getSplashView(activity: Activity): View? | 获得开屏广告 |
 | fun setEventListener(eventListener: RXSplashEventListener) | 设置广告交互监听器 |
 
-##### 设置广告交互监听器
+#### 设置广告交互监听器
 
     mRXSplashAd.setEventListener(object : RXSplashEventListener {
         override fun onShowSuccess(adInfo: RXAdInfo) {
             RXLogUtil.d("Splash onShowSuccess")
-
         }
 
         override fun onShowFailure(adInfo: RXAdInfo, error: RError) {
@@ -139,7 +138,7 @@
         }
     })
 
-##### RXSplashEventListener说明
+#### RXSplashEventListener说明
 | 方法 | 含义 |
 | --- | --- |
 | onShowSuccess | 展示回调 |
@@ -346,7 +345,7 @@ RXSDK.createRXSdkAd().loadInterstitial("unit_id", object : RXSdkAd.RXInterstitia
 })
 ```
 
-### Banner
+## Banner
 横幅广告是移动广告中最传统的广告类型。它很容易实现，而且用户可接受度高。它是超休闲游戏和工具的良好实现形式。
 ##### 加载广告
 
@@ -363,14 +362,14 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAd
 })
 ```
 
-##### RXBannerAd
+#### RXBannerAd
 
 | 方法 | 描述|
 | :---: | :---: |
-| fun setRXBannerListener(listener: RXBannerEventListener)|Register interactive callback for banner|
-| fun render(bannerType: Int) | Render the view of banner|
+| fun setRXBannerListener(listener: RXBannerEventListener)|为banner注册交互监听回调|
+| fun render(bannerType: Int) | 渲染banner view |
 
-##### BannerType
+#### BannerType
 
 | 类型 | 宽高比|
 | :---: | :---: |
@@ -378,17 +377,17 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAd
 | BannerType.MEDIUM | 660 : 255 |
 | BannerType.LARGE | 660 : 295 |
 
-##### RXBannerEventListener
+#### RXBannerEventListener
 
 | 方法 | 描述 |
 | :---: | :---: |
-| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
-| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
-| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
-| fun onRenderSuccess(pView: View) | Ad render success callback with the banner's view |
-| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | Ad render fail callback with reason |
+| fun onAdShow(adInfo: RXAdInfo) | 广告展示回调 |
+| fun onAdClick(adInfo: RXAdInfo) | 广告点击回调 |
+| fun onAdClose(adInfo: RXAdInfo) | 广告关闭回调 |
+| fun onRenderSuccess(pView: View) | 广告渲染成功，并且返回渲染成功的View |
+| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | 广告渲染失败，并且返回错误原因 |
 
-##### 代码样例
+#### 示例代码
 
 ```
 RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdListener {
@@ -424,9 +423,9 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdL
 
 ```
 
-### Native
+## Native
 原生广告是目前最流行的广告类型之一。Roulax SDK将向您的应用程序返回创意材料信息。你将能够把它放到你的产品中，进而创造最佳的用户体验。
-##### 加载广告
+#### 加载广告
 
 ```
  RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd.RXNativeAdListener {
@@ -440,24 +439,24 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdL
 		})
 ```
 
-##### RXNativeAd
+#### RXNativeAd
 
 | 方法 | 描述|
 | :---: | :---: |
-| fun setRXNativeListener(listener: RXNativeEventListener)|Register interactive callback for native ad|
-| fun render() | Render the view of native ad|
+| fun setRXNativeListener(listener: RXNativeEventListener)|为native注册交互监听回调|
+| fun render() | 渲染native view|
 
-##### RXNativeEventListener
+#### RXNativeEventListener
 
 | 方法 | 描述|
 | :---: | :---: |
-| fun onAdShow(adInfo: RXAdInfo) | Ad display callback |
-| fun onAdClick(adInfo: RXAdInfo) | Ad click callback |
-| fun onAdClose(adInfo: RXAdInfo) | Ad close callback |
-| fun onRenderSuccess(pView: View) | Ad render success callback with the native ad's view |
-| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | Ad render fail callback with reason |
+| fun onAdShow(adInfo: RXAdInfo) | 广告展示回调 |
+| fun onAdClick(adInfo: RXAdInfo) | 广告点击回调 |
+| fun onAdClose(adInfo: RXAdInfo) | 广告关闭回调 |
+| fun onRenderSuccess(pView: View) | 广告渲染成功，并且返回渲染成功的View |
+| fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | 广告渲染失败，并且返回失败的原因 |
 
-##### 代码样例
+#### 示例代码
 
 ```
 RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd.RXNativeAdListener {

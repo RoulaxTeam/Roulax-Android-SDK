@@ -362,14 +362,14 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAd
 })
 ```
 
-##### RXBannerAd
+#### RXBannerAd
 
 | 方法 | 描述|
 | :---: | :---: |
 | fun setRXBannerListener(listener: RXBannerEventListener)|为banner注册交互监听回调|
 | fun render(bannerType: Int) | 渲染banner view |
 
-##### BannerType
+#### BannerType
 
 | 类型 | 宽高比|
 | :---: | :---: |
@@ -377,7 +377,7 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAd
 | BannerType.MEDIUM | 660 : 255 |
 | BannerType.LARGE | 660 : 295 |
 
-##### RXBannerEventListener
+#### RXBannerEventListener
 
 | 方法 | 描述 |
 | :---: | :---: |
@@ -387,7 +387,7 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object : RXSdkAd.RXBannerAd
 | fun onRenderSuccess(pView: View) | 广告渲染成功，并且返回渲染成功的View |
 | fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | 广告渲染失败，并且返回错误原因 |
 
-##### 示例代码
+#### 示例代码
 
 ```
 RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdListener {
@@ -425,7 +425,7 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdL
 
 ## Native
 原生广告是目前最流行的广告类型之一。Roulax SDK将向您的应用程序返回创意材料信息。你将能够把它放到你的产品中，进而创造最佳的用户体验。
-##### 加载广告
+#### 加载广告
 
 ```
  RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd.RXNativeAdListener {
@@ -439,14 +439,14 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdL
 		})
 ```
 
-##### RXNativeAd
+#### RXNativeAd
 
 | 方法 | 描述|
 | :---: | :---: |
 | fun setRXNativeListener(listener: RXNativeEventListener)|为native注册交互监听回调|
 | fun render() | 渲染native view|
 
-##### RXNativeEventListener
+#### RXNativeEventListener
 
 | 方法 | 描述|
 | :---: | :---: |
@@ -456,7 +456,7 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdL
 | fun onRenderSuccess(pView: View) | 广告渲染成功，并且返回渲染成功的View |
 | fun onRenderFail(pAdInfo: RXAdInfo, pError: RError) | 广告渲染失败，并且返回失败的原因 |
 
-##### 示例代码
+#### 示例代码
 
 ```
 RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd.RXNativeAdListener {

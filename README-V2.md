@@ -148,7 +148,8 @@
 | onDismiss | 广告关闭回调 |
 
 #### 展示广告
-	val splashView = mRXSplashAd.getSplashView(activity)
+	
+    val splashView = mRXSplashAd.getSplashView(activity)
     splashView?.let {
         mSplashContainer.addView(it)
     }?:let {
@@ -178,7 +179,7 @@
 		            RXLogUtil.d("Splash onDismiss")
 		        }
 		    })
-			val splashView = splashAd.getSplashView(activity)
+		    val splashView = splashAd.getSplashView(activity)
 		    splashView?.let {
 		        mSplashContainer.addView(it)
 		    }?:let {

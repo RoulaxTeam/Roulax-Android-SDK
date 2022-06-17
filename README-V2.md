@@ -110,7 +110,7 @@
 | failure | 广告请求失败回调 返回的错误信息(RError)表示广告请求失败的原因 |
 | timeout | 开屏广告加载超时回调 |
 
-##### RXSplashAd说明
+#### RXSplashAd说明
 
 | 方法 | 含义 |
 | --- | --- |
@@ -118,7 +118,7 @@
 | fun getSplashView(activity: Activity): View? | 获得开屏广告 |
 | fun setEventListener(eventListener: RXSplashEventListener) | 设置广告交互监听器 |
 
-##### 设置广告交互监听器
+#### 设置广告交互监听器
 
     mRXSplashAd.setEventListener(object : RXSplashEventListener {
         override fun onShowSuccess(adInfo: RXAdInfo) {
@@ -139,7 +139,7 @@
         }
     })
 
-##### RXSplashEventListener说明
+#### RXSplashEventListener说明
 | 方法 | 含义 |
 | --- | --- |
 | onShowSuccess | 展示回调 |

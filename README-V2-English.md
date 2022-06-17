@@ -7,7 +7,7 @@
 ### Update Note
 | Date | Version | Log |
 |--|--|--|
-| 2022-05-17 | 2.0.00 | Roulax SDK Release |
+| 2022-06-17 | 2.0.00 | Roulax SDK Release |
 
 ## How to use
 
@@ -43,6 +43,7 @@
 ## Initialization
 
 In principle, please keep the initialization operation in the project Application<br>
+
     RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {
         override fun onSDKInitSuccess() {
             RXLogUtil.d("onSDKInitSuccess")
@@ -138,6 +139,7 @@ In the scenario of opening screen advertisement, you can display it when the app
     })
 
 #### RXSplashEventListener
+
 | Method | Description |
 | --- | --- |
 | onShowSuccess | Show callback |
@@ -146,6 +148,7 @@ In the scenario of opening screen advertisement, you can display it when the app
 | onDismiss | Ad close callback |
 
 #### Display ads
+
 	val splashView = mRXSplashAd.getSplashView(activity)
     splashView?.let {
         mSplashContainer.addView(it)
@@ -176,7 +179,7 @@ In the scenario of opening screen advertisement, you can display it when the app
 		            RXLogUtil.d("Splash onDismiss")
 		        }
 		    })
-			val splashView = splashAd.getSplashView(activity)
+            val splashView = splashAd.getSplashView(activity)
 		    splashView?.let {
 		        mSplashContainer.addView(it)
 		    }?:let {

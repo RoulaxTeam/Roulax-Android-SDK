@@ -123,7 +123,6 @@
     mRXSplashAd.setEventListener(object : RXSplashEventListener {
         override fun onShowSuccess(adInfo: RXAdInfo) {
             RXLogUtil.d("Splash onShowSuccess")
-
         }
 
         override fun onShowFailure(adInfo: RXAdInfo, error: RError) {

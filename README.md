@@ -8,7 +8,7 @@
 | 日期 | 版本 | 日志 |
 |--|--|--|
 | 2022-05-11 | 1.0.11 | Roulax SDK Release |
-
+| 2022-06-17 | 2.0.00 | [Roulax SDK Release](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max-2.0_release.aar) |
 ## 使用方式
 
 ### 添加依赖库

@@ -6,10 +6,13 @@
 | RoulaxSDK Version | Adapter Version |
 |--|--|
 | 1.0.11 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar) |
+| 2.0.00 | [Roulax SDK Release](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max-2.0_release.aar) |
 
 ### Support ads
 
 1. Interstitial
+2. RewardVideo
+3. Banner
 
 ### Support platforms
 

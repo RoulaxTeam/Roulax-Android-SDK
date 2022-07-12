@@ -69,5 +69,11 @@ repositories {
 dependencies {  
     // ... other project dependencies
     implementation (name: "rad-adapter-max", ext: "aar")
+    implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
+    implementation 'com.google.guava:guava:31.0.1-android'
+    implementation 'androidx.media:media:1.4.3'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 }
 ```

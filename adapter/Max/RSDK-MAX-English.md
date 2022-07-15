@@ -7,6 +7,7 @@
 |--|--|--|
 | 1.0.11 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar) | Support interstitial style|
 | 2.0.00 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max_2.0_release.aar) | Added support for rewarded video and Banner ad styles |
+| 2.1.01 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max_2.1.01_release.aar) | Added support for ad templates |
 
 ### Support ads
 

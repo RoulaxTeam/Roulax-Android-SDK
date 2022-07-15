@@ -5,6 +5,10 @@
 
 ### Support ads
 1. Interstitial
+2. Banner
+3. RewardVideo
+4. Splash
+5. Native
 
 ### Support platforms
 1. Android

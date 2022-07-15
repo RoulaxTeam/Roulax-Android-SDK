@@ -7,6 +7,7 @@
 |--|--|--|
 | 1.0.11 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar) | 支持插屏样式 |
 | 2.0.00 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max_2.0_release.aar) | 新增支持激励视频、Banner广告样式 |
+| 2.1.01 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max_2.1.01_release.aar) | 新增广告模板支持 |
 
 ### 支持的广告类型
 

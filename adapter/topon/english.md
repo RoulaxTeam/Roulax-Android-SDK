@@ -5,7 +5,7 @@
 ## 更新日志
 | RoulaxSDK Version | Adapter Version | Log |
 |--|--|--|
-| 2.1.01 | [Roulax-Topon-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_topon/rad_adapter_topon_2.1.01_release.aar) | Add support for ad templates |
+| 2.1.01 | [Roulax-Topon-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_2.1.01_release.aar) | Add support for ad templates |
 ### Support ads
 1. Interstitial
 2. Banner

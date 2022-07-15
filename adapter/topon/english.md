@@ -2,7 +2,10 @@
 
 ## Language
 * ch [中文](chinese.md)
-
+## 更新日志
+| RoulaxSDK Version | Adapter Version | 日志 |
+|--|--|--|
+| 2.1.01 | [Roulax-Topon-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_topon/rad_adapter_topon_2.1.01_release.aar) | 新增广告模板支持 |
 ### Support ads
 1. Interstitial
 2. Banner

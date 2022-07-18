@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="159dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="18dp"
+        app:srcCompat="@mipmap/roulax_demo_logo" />
+
+    <Button
+        android:id="@+id/button_witch"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="旋转屏幕"
+        style="@style/DemoButton" />
+
+    <Button
+        android:id="@+id/button_init"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="SDK初始化"
+        style="@style/DemoButton"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_rv"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="激励视频"
+        style="@style/DemoButton"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_splash"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="开屏"
+        style="@style/DemoButton"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_banner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_splash"
+        app:layout_constraintBottom_toTopOf="@+id/button_flowicon"
+        android:text="横幅广告"
+        style="@style/DemoButton"/>
+
+    <Button
+        android:id="@+id/button_flowicon"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="悬浮窗广告"
+        style="@style/DemoButton"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/button_native"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="原生广告"
+        style="@style/DemoButton"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_inter"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="插屏广告"
+        style="@style/DemoButton"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_native_icon"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Native Icon"
+        style="@style/DemoButton"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:constraint_referenced_ids="button_witch, button_init, button_rv, button_splash, button_banner, button_native, button_inter, button_native_icon, button_flowicon"
+        app:flow_wrapMode="aligned"
+        app:flow_horizontalGap="25dp"
+        app:flow_verticalGap="15dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

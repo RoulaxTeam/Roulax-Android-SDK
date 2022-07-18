@@ -2,9 +2,16 @@
 
 ## Language
 * ch [中文](chinese.md)
-
+## 更新日志
+| RoulaxSDK Version | Adapter Version | Log |
+|--|--|--|
+| 2.1.01 | [Roulax-Topon-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_2.1.01_release.aar) | Add support for ad templates |
 ### Support ads
 1. Interstitial
+2. Banner
+3. RewardVideo
+4. Splash
+5. Native
 
 ### Support platforms
 1. Android

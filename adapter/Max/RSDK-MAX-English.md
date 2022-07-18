@@ -6,7 +6,8 @@
 | RoulaxSDK Version | Adapter Version | Log |
 |--|--|--|
 | 1.0.11 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad-adapter-max.aar) | Support interstitial style|
-| 2.0.00 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max-2.0_release.aar) | Added support for rewarded video and Banner ad styles |
+| 2.0.00 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max_2.0_release.aar) | Added support for rewarded video and Banner ad styles |
+| 2.1.01 | [Roulax-Max-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max_2.1.01_release.aar) | Added support for ad templates |
 
 ### Support ads
 
@@ -69,5 +70,11 @@ repositories {
 dependencies {  
     // ... other project dependencies
     implementation (name: "rad-adapter-max", ext: "aar")
+    implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
+    implementation 'com.google.guava:guava:31.0.1-android'
+    implementation 'androidx.media:media:1.4.3'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 }
 ```

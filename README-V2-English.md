@@ -16,7 +16,7 @@
 
 
 | Roulax library | description | necessary |
-|--|--|
+|--|--|--|
 | rad_library_core-release.aar 			| sdk core lib 		| √ |
 | rad_library_common-release.aar 		| sdk common lib 		| √ |
 | rad_library_nativeicon-release.aar 	| nativeicon ad lib 	| × |

@@ -16,7 +16,7 @@
 2、获取到之后，根据项目实际情况，在项目根目录添加RoulaxSDK的库引用。
 
 | Roulax 依赖库 | 描述 | 是否必要 |
-|--|--|
+|--|--|--|
 | rad_library_core-release.aar 			| sdk广告核心库 		| √ |
 | rad_library_common-release.aar 		| sdk通用模块库 		| √ |
 | rad_library_nativeicon-release.aar 	| nativeicon广告库 	| × |

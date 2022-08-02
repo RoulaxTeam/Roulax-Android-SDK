@@ -8,6 +8,7 @@
 |--|--|--|
 | 2022-06-17 | 2.0.00 | Roulax SDK Release |
 | 2022-07-14 | 2.1.01 | 广告模板支持 |
+| 2022-08-01 | 2.1.04 | 优化播放器兼容性问题，增加奔溃上报模块 |
 
 ## 使用方式
 
@@ -26,12 +27,11 @@
 | rad_library_flowicon-release.aar 		| flowicon广告库 	| × |
 | rad_library_interstitial-release.aar	| interstitial广告库 | × |
 | rad_library_rewardvideo-release.aar 	| rewardvideo广告库  | × |
+| rad_library_trace-release.aar         | sdk奔溃上报库      |  ×  |
 | rad_library_playercommon-release.aar 	| sdk视频依赖库      | 如果需要rewardvideo或interstitial广告类型，则必要 |
 
 ### 添加SDK依赖的第三方库
 	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
-	implementation 'com.google.guava:guava:31.0.1-android'
-	implementation 'androidx.media:media:1.4.3'
 	implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 

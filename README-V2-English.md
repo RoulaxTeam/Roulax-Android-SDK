@@ -7,6 +7,7 @@
 |--|--|--|
 | 2022-06-17 | 2.0.00 | Roulax SDK Release |
 | 2022-07-14 | 2.1.01 | Ad template support |
+| 2022-08-01 | 2.1.04 | Optimize video player compatibility issues, add crash tracing module |
 
 ## How to use
 
@@ -26,11 +27,10 @@
 | rad_library_flowicon-release.aar 		| flowicon ad lib 	| × |
 | rad_library_interstitial-release.aar	| interstitial ad lib | × |
 | rad_library_rewardvideo-release.aar 	| rewardvideo ad lib| × |
+| rad_library_trace-release.aar   		| crash tracing lib | × |
 | rad_library_playercommon-release.aar 	| sdk video player lib| if rewardvideo or interstitial ad is needed, this lib is necessary |
 ### Add SDK-dependent third-party libraries
 	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
-	implementation 'com.google.guava:guava:31.0.1-android'
-	implementation 'androidx.media:media:1.4.3'
 	implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 

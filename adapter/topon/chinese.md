@@ -37,7 +37,7 @@ v5.6.4 及以上版本
 {
     "app_id": "your roulax appId",
     "app_key": "your roulax appKey",
-    "inter_unit_id": "your roulax interstitial unitId"
+    "unit_id": "your roulax interstitial unitId"
 }
 </pre>
 ![](ch_2.png)

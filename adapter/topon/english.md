@@ -34,9 +34,9 @@ You can add the Ad Source of the **Roulax Network** on the **Mediation** pages o
 The Parameters of the Ad Source must be the json format below:
 <pre>
 {
-    "app_id": "your roulax appId",
-    "app_key": "your roulax appKey",
-    "unit_id": "your roulax ad unitId"
+    "app_id":"your roulax appid",
+    "unit_id":"your roulax ad unitid",
+    "bid_floor":"unit bidfloor"
 }
 </pre>
 ![](2.png)

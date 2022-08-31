@@ -36,7 +36,7 @@ The Parameters of the Ad Source must be the json format below:
 {
     "app_id": "your roulax appId",
     "app_key": "your roulax appKey",
-    "inter_unit_id": "your roulax interstitial unitId"
+    "unit_id": "your roulax interstitial unitId"
 }
 </pre>
 ![](2.png)

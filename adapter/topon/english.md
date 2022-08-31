@@ -25,7 +25,17 @@ v5.6.4 or latest
 In the TopOn dashboard, select [Network](https://app.toponad.com/m/network), click **"+ Network"**, select **“Custom Network”**
 
 1. Fill in the Network Name, such as "Roulax"
-2. Fill **“com.rad.adapter.topon.RoulaxInterstitialAdapter”** in the Adaper's Class Name > Android > Interstitial
+2. Fill adapter class in the Adaper's Class Name > Android > Adapter
+
+  RV **“com.rad.adapter.topon.RoulaxRewardVideoAdapter”**
+
+  Interstitial **“com.rad.adapter.topon.RoulaxInterstitialAdapter”**
+
+  Banner **“com.rad.adapter.topon.RoulaxBannerAdapter”**
+
+  Native **“com.rad.adapter.topon.RoulaxNativeAdapter”**
+
+  Splash **“com.rad.adapter.topon.RoulaxSplashAdapter”**
 
 ![](1.png)
 ### 2.Add the Ad Sources for Roulax Network

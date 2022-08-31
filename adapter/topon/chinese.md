@@ -35,9 +35,9 @@ v5.6.4 及以上版本
 需要填写Roulax广告源参数，参数格式必须是以下json格式：
 <pre>
 {
-    "app_id": "your roulax appId",
-    "app_key": "your roulax appKey",
-    "unit_id": "your roulax ad unitId"
+    "app_id":"your roulax appid",
+    "unit_id":"your roulax ad unitid",
+    "bid_floor":"unit bidfloor"
 }
 </pre>
 ![](ch_2.png)

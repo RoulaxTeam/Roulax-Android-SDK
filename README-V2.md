@@ -9,6 +9,9 @@
 | 2022-06-17 | 2.0.00 | Roulax SDK Release |
 | 2022-07-14 | 2.1.01 | 广告模板支持 |
 | 2022-08-01 | 2.1.04 | 优化播放器兼容性问题，增加奔溃上报模块 |
+| 2022-08-23 | 2.1.05 | SDK广告策略优化，点击跳转优化，埋点模块优化，增加下载模块 |
+| 2022-09-09 | 2.1.06 | 部分内部逻辑优化，缓存优化 |
+
 
 ## 使用方式
 
@@ -29,6 +32,7 @@
 | rad_library_rewardvideo-release.aar 	| rewardvideo广告库  | × |
 | rad_library_trace-release.aar         | sdk奔溃上报库      |  ×  |
 | rad_library_playercommon-release.aar 	| sdk视频依赖库      | 如果需要rewardvideo或interstitial广告类型，则必要 |
+| rad_library_download-release.aar 		| sdk下载模块 	    | 线下包如果需要sdk下载功能，则可依赖|
 
 ### 添加SDK依赖的第三方库
 	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
@@ -711,6 +715,7 @@ NativeIcon广告是Roulax平台特殊的广告形式，该广告可以为开发�
 | fun getIconResource(): String | 获取icon的入口素材url |
 | fun click() | 调用native icon的点击以展示广告 |
 |fun setRXNativeIconListener(listener: RXNativeIconEventListener)|为native icon设置交互监听回调|
+| fun onImpression()|如果开发者使用自己准备的图片素材渲染入口，而不是使用getIconResource()中返回的入口素材来渲染入口的话，请在渲染成功后调用omImpression来协助SDK上报展示|
 
 #### RXNativeIconEventListener
 | 方法 | 描述 |

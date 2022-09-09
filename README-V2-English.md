@@ -8,6 +8,8 @@
 | 2022-06-17 | 2.0.00 | Roulax SDK Release |
 | 2022-07-14 | 2.1.01 | Ad template support |
 | 2022-08-01 | 2.1.04 | Optimize video player compatibility issues, add crash tracing module |
+| 2022-08-23 | 2.1.05 | SDK advertising strategy optimisation, click-to-jump optimisation, tracking module optimisation, add download module |
+| 2022-09-09 | 2.1.06 | Some internal logic optimisation, cache optimisation |
 
 ## How to use
 
@@ -28,7 +30,8 @@
 | rad_library_interstitial-release.aar	| interstitial ad lib | × |
 | rad_library_rewardvideo-release.aar 	| rewardvideo ad lib| × |
 | rad_library_trace-release.aar   		| crash tracing lib | × |
-| rad_library_playercommon-release.aar 	| sdk video player lib| if rewardvideo or interstitial ad is needed, this lib is necessary |
+| rad_library_playercommon-release.aar 	| sdk video player lib| If reward video or interstitial ad is needed, this lib is necessary. |
+| rad_library_download-release.aar 		| sdk download lib    | Packages outside Google Play that require sdk download function can implement it. |
 ### Add SDK-dependent third-party libraries
 	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
 	implementation 'androidx.appcompat:appcompat:1.3.0'
@@ -707,6 +710,7 @@ NativeIcon ads are a special form of advertising on the Roulax platform that pro
 | fun getIconResource(): String | Get the url of img resource for icon |
 | fun click() | Call the click method of native icon |
 |fun setRXNativeIconListener(listener: RXNativeIconEventListener)|Set up ad interaction listeners|
+| fun onImpression()|If the developer renders the icon using their own prepared image material rather than the image returned in getIconResource(), please call omImpression() after rendering successfully to assist the SDK in tracking the impression.| 
 
 #### RXNativeIconEventListener
 | Method | Description |

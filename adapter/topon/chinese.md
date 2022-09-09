@@ -26,7 +26,17 @@ v5.6.4 及以上版本
 登录TopOn开发者后台，点击 [广告平台](https://app.toponad.com/m/network)，点击 **"+ 广告平台"**， 选择 **“自定义广告平台”**
 
 1. 填写广告平台名称，例如“Roulax”
-2. 在Adapter类名 > Android > 插屏中填入**“com.rad.adapter.topon.RoulaxInterstitialAdapter”**
+2. 在Adapter类名 > Android > Adapter中填入
+
+  激励视频 **“com.rad.adapter.topon.RoulaxRewardVideoAdapter”**
+
+  插屏 **“com.rad.adapter.topon.RoulaxInterstitialAdapter”**
+
+  横幅 **“com.rad.adapter.topon.RoulaxBannerAdapter”**
+
+  原生 **“com.rad.adapter.topon.RoulaxNativeAdapter”**
+
+  开屏 **“com.rad.adapter.topon.RoulaxSplashAdapter”**
 
 ![](ch_1.png)
 ### 2. 添加Roulax广告平台的广告源
@@ -35,9 +45,9 @@ v5.6.4 及以上版本
 需要填写Roulax广告源参数，参数格式必须是以下json格式：
 <pre>
 {
-    "app_id": "your roulax appId",
-    "app_key": "your roulax appKey",
-    "inter_unit_id": "your roulax interstitial unitId"
+    "app_id":"your roulax appid",
+    "unit_id":"your roulax ad unitid",
+    "bid_floor":"unit bidfloor"
 }
 </pre>
 ![](ch_2.png)

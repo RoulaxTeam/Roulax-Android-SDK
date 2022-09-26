@@ -11,6 +11,7 @@
 | 2022-08-01 | 2.1.04 | 优化播放器兼容性问题，增加奔溃上报模块 |
 | 2022-08-23 | 2.1.05 | SDK广告策略优化，点击跳转优化，埋点模块优化，增加下载模块 |
 | 2022-09-09 | 2.1.06 | 部分内部逻辑优化，缓存优化 |
+| 2022-09-21 | 2.1.07 | 增加Topon头部竞价支持，FlowIcon增加设置自定义位置，大小的方法以及激励回调 |
 
 
 ## 使用方式
@@ -557,6 +558,10 @@ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd
 | fun setFlowIdelCallback(callback: OnFlowIdelCallback) | 设置悬浮窗广告空闲交互监听器，当用户在广告空闲时点击FlowIcon时进行回调。开发者可在该回调中实现广告空闲时的用户交互，SDK默认会实现 |
 | fun setFlowEventListener(eventListener: RXFlowIconEventListener) | 设置悬浮窗广告交互监听器 |
 | fun setImmersionStatusBar(immersionStatusBar: Boolean) | 设置悬浮窗是否沉浸式状态栏（全屏应用、游戏建议传true） |
+| fun setLocation(x: Int, y: Int) | 设置悬浮窗位置 |
+| fun setPercentLocation(xPercent: Int, yPercent: Int) | 按照屏幕百分比设置悬浮窗位置 |
+| fun setSize(width: Int, height: Int) | 设置悬浮窗大小 |
+| fun setDragEnable(dragEnable: Boolean) | 设置悬浮窗是否可拖动 |
 
 #### 设置悬浮窗参数
 
@@ -616,6 +621,7 @@ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd
 | onHide | FlowIcon隐藏回调 |
 | onDismiss | FlowIcon销毁回调 |
 | onClick | FlowIcon点击回调 |
+| onReward | FlowIcon激励回调 |
 
 #### OnFlowIdelCallback说明
 | 方法 | 含义 |

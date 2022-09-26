@@ -10,6 +10,7 @@
 | 2022-08-01 | 2.1.04 | Optimize video player compatibility issues, add crash tracing module |
 | 2022-08-23 | 2.1.05 | SDK advertising strategy optimisation, click-to-jump optimisation, tracking module optimisation, add download module |
 | 2022-09-09 | 2.1.06 | Some internal logic optimisation, cache optimisation |
+| 2022-09-21 | 2.1.07 | Add support for Topon header bidding, add methods to set custom position, size for flow icon and add onRewarded callback for flow icon|
 
 ## How to use
 
@@ -542,6 +543,10 @@ FlowIcon is a special form of advertising on the Roulax platform, which can be h
 | fun hide() | Hide FlowIcon |
 | fun dismiss() | Dismiss FlowIcon |
 | fun setFlowConfig(config: FlowConfig) | Set config for FlowIcon|
+| fun setLocation(x: Int, y: Int) | Set location for FlowIcon |
+| fun setPercentLocation(xPercent: Int, yPercent: Int) | Set FlowIcon's position by screen percentage |
+| fun setSize(width: Int, height: Int) | Set size for FlowIcon |
+| fun setDragEnable(dragEnable: Boolean) | Set if FlowIcon can be dragged |
 
 #### FlowConfig
 

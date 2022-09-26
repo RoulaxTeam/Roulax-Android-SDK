@@ -16,7 +16,7 @@
 ## 版本升级注意事项 
 | 原版本 | 新版本 | 注意事项 |
 | :---: | :---: | :--- |
-| 2.1.04 | 2.1.07 | 1、FlowIcon新增自定位置<br>fun setLocation(x: Int, y: Int) 设置悬浮窗位置（优先级高）<br>fun setPercentLocation(xPercent: Int, yPercent: Int) 按照屏幕百分比设置悬浮窗位置（优先级低）<br>2、FlowIcon新增自定大小<br>fun setSize(width: Int, height: Int) 设置悬浮窗大小<br>2、FlowIcon新增激励回调<br>fun onRewarded(adInfo: RXAdInfo) |
+| 2.1.04 | 2.1.07 | 1、FlowIcon新增自定位置<br>fun setLocation(x: Int, y: Int) 设置悬浮窗位置（优先级高）<br>fun setPercentLocation(xPercent: Int, yPercent: Int) 按照屏幕百分比设置悬浮窗位置（优先级低）<br>2、FlowIcon新增自定大小<br>fun setSize(width: Int, height: Int) 设置悬浮窗大小<br>3、FlowIcon新增激励回调<br>fun onRewarded(adInfo: RXAdInfo) |
 
 ## 使用方式
 

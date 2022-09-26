@@ -12,6 +12,11 @@
 | 2022-09-09 | 2.1.06 | Some internal logic optimisation, cache optimisation |
 | 2022-09-21 | 2.1.07 | Add support for Topon header bidding, add methods to set custom position, size for flow icon and add onRewarded callback for flow icon|
 
+## Version Upgrade Notes
+| Original version | New version | Precautions |
+| :---: | :---: | :--- |
+| 2.1.04 | 2.1.07 | 1、FlowIcon adds custom location<br>fun setLocation(x: Int, y: Int) Set the floating window position(high priority)<br>fun setPercentLocation(xPercent: Int, yPercent: Int) Set the floating window position according to the screen percentage (low priority)<br>2、FlowIcon add custom size<br>fun setSize(width: Int, height: Int) Set the floating window size<br>2、FlowIcon added reward callback<br>fun onRewarded(adInfo: RXAdInfo) |
+
 ## How to use
 
 ### Add dependency library
@@ -543,8 +548,8 @@ FlowIcon is a special form of advertising on the Roulax platform, which can be h
 | fun hide() | Hide FlowIcon |
 | fun dismiss() | Dismiss FlowIcon |
 | fun setFlowConfig(config: FlowConfig) | Set config for FlowIcon|
-| fun setLocation(x: Int, y: Int) | Set location for FlowIcon |
-| fun setPercentLocation(xPercent: Int, yPercent: Int) | Set FlowIcon's position by screen percentage |
+| fun setLocation(x: Int, y: Int) | Set location for FlowIcon(high priority) |
+| fun setPercentLocation(xPercent: Int, yPercent: Int) | Set FlowIcon's position by screen percentage(low priority) |
 | fun setSize(width: Int, height: Int) | Set size for FlowIcon |
 | fun setDragEnable(dragEnable: Boolean) | Set if FlowIcon can be dragged |
 
@@ -595,6 +600,11 @@ FlowIcon is a special form of advertising on the Roulax platform, which can be h
                 @Override
                 public void onClick(@NonNull RXAdInfo adInfo) {
 					RXLogUtil.d("RXSDK flowicon on click")
+                }
+
+                @Override
+                public void onRewarded(@NonNull RXAdInfo adInfo) {
+                    RXLogUtil.d("RXSDK flowicon onRewarded")
                 }
              })
 			.setFlowIdelCallback(new OnFlowIdelCallback() {

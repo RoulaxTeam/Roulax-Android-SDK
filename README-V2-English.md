@@ -15,7 +15,7 @@
 ## Version Upgrade Notes
 | Original version | New version | Precautions |
 | :---: | :---: | :--- |
-| 2.1.04 | 2.1.07 | 1、FlowIcon adds custom location<br>fun setLocation(x: Int, y: Int) Set the floating window position(high priority)<br>fun setPercentLocation(xPercent: Int, yPercent: Int) Set the floating window position according to the screen percentage (low priority)<br>2、FlowIcon add custom size<br>fun setSize(width: Int, height: Int) Set the floating window size<br>3、FlowIcon added reward callback<br>fun onRewarded(adInfo: RXAdInfo) |
+| 2.1.04 | 2.1.07 | 1.FlowIcon adds custom location<br>fun setLocation(x: Int, y: Int) Set the floating window position(high priority)<br>fun setPercentLocation(xPercent: Int, yPercent: Int) Set the floating window position according to the screen percentage (low priority)<br>2.FlowIcon add custom size<br>fun setSize(width: Int, height: Int) Set the floating window size<br>3.FlowIcon added reward callback<br>fun onRewarded(adInfo: RXAdInfo) |
 
 ## How to use
 

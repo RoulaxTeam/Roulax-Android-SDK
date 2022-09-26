@@ -13,6 +13,10 @@
 | 2022-09-09 | 2.1.06 | 部分内部逻辑优化，缓存优化 |
 | 2022-09-21 | 2.1.07 | 增加Topon头部竞价支持，FlowIcon增加设置自定义位置，大小的方法以及激励回调 |
 
+## 版本升级注意事项 
+| 原版本 | 新版本 | 注意事项 |
+| :---: | :---: | :---: |
+| 2.1.04 | 2.1.07 | 1、FlowIcon新增自定位置\nfun setLocation(x: Int, y: Int) |
 
 ## 使用方式
 
@@ -558,10 +562,9 @@ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd
 | fun setFlowIdelCallback(callback: OnFlowIdelCallback) | 设置悬浮窗广告空闲交互监听器，当用户在广告空闲时点击FlowIcon时进行回调。开发者可在该回调中实现广告空闲时的用户交互，SDK默认会实现 |
 | fun setFlowEventListener(eventListener: RXFlowIconEventListener) | 设置悬浮窗广告交互监听器 |
 | fun setImmersionStatusBar(immersionStatusBar: Boolean) | 设置悬浮窗是否沉浸式状态栏（全屏应用、游戏建议传true） |
-| fun setLocation(x: Int, y: Int) | 设置悬浮窗位置 |
-| fun setPercentLocation(xPercent: Int, yPercent: Int) | 按照屏幕百分比设置悬浮窗位置 |
+| fun setLocation(x: Int, y: Int) | 设置悬浮窗位置（优先级高） |
+| fun setPercentLocation(xPercent: Int, yPercent: Int) | 按照屏幕百分比设置悬浮窗位置（优先级低） |
 | fun setSize(width: Int, height: Int) | 设置悬浮窗大小 |
-| fun setDragEnable(dragEnable: Boolean) | 设置悬浮窗是否可拖动 |
 
 #### 设置悬浮窗参数
 

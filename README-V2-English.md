@@ -5,13 +5,12 @@
 ### Update Note
 | Date | Version | Log |
 |--|--|--|
-| 2022-06-17 | 2.0.00 | Roulax SDK Release |
-| 2022-07-14 | 2.1.01 | Ad template support |
-| 2022-08-01 | 2.1.04 | Optimize video player compatibility issues, add crash tracing module |
-| 2022-08-23 | 2.1.05 | SDK advertising strategy optimisation, click-to-jump optimisation, tracking module optimisation, add download module |
-| 2022-09-09 | 2.1.06 | Some internal logic optimisation, cache optimisation |
-| 2022-09-21 | 2.1.07 | Add support for Topon header bidding, add methods to set custom position, size for flow icon and add onRewarded callback for flow icon|
-
+| 2022-06-17 | 2.0.00 | 1.Roulax SDK Release |
+| 2022-07-14 | 2.1.01 | 1.Optimize known issues |
+| 2022-08-01 | 2.1.04 | 1.Optimize known issues |
+| 2022-08-23 | 2.1.05 | 1.Optimize known issues<br>2.Add download module |
+| 2022-09-09 | 2.1.06 | 1.Optimize known issues |
+| 2022-09-21 | 2.1.07 | 1.Added Topon header bidding support<br>2.FlowIcon adds methods for setting custom position, size, and incentive callbacks<br>3.Optimize known issues |
 ## Version Upgrade Notes
 | Original version | New version | Precautions |
 | :---: | :---: | :--- |

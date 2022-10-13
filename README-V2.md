@@ -37,7 +37,7 @@
 | rad_library_rewardvideo-release.aar 	| rewardvideo广告库  | × |
 | rad_library_trace-release.aar         | sdk奔溃上报库      |  ×  |
 | rad_library_playercommon-release.aar 	| sdk视频依赖库      | 如果需要rewardvideo或interstitial广告类型，则必要 |
-| rad_library_download-release.aar 		| sdk下载模块 	    | 线下包如果需要sdk下载功能，则可依赖|
+| rad_library_download-release.aar 		| sdk下载模块 	    | 线下包(非GP开发者)如果需要sdk下载功能，则可依赖|
 
 ### 添加SDK依赖的第三方库
 	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'

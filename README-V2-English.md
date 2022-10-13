@@ -36,7 +36,7 @@
 | rad_library_rewardvideo-release.aar 	| rewardvideo ad lib| × |
 | rad_library_trace-release.aar   		| crash tracing lib | × |
 | rad_library_playercommon-release.aar 	| sdk video player lib| If reward video or interstitial ad is needed, this lib is necessary. |
-| rad_library_download-release.aar 		| sdk download lib    | Packages outside Google Play that require sdk download function can implement it. |
+| rad_library_download-release.aar 		| sdk download lib    | Offline packages (non-GP developers) can implement sdk download function if they need it.<br>GP developers recommend not to implement it. |
 ### Add SDK-dependent third-party libraries
 	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
 	implementation 'androidx.appcompat:appcompat:1.3.0'

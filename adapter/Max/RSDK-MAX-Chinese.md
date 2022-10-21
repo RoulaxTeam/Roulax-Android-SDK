@@ -44,7 +44,7 @@
 
 - **App ID**：Roulax的App Id
 - **Placement ID**： Roulax的Unit Id
-- **Custom Pameters**：空
+- **Custom Pameters**：默认为空，如果需要设置低价，可以以{"bid_floor": 价格}的格式传入
 - **CPM Price**：Roulax的CPM价格
 
 ## 在Android中集成

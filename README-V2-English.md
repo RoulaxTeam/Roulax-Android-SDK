@@ -11,7 +11,7 @@
 | 2022-08-23 | 2.1.05 | 1.Optimize known issues<br>2.Add download module |
 | 2022-09-09 | 2.1.06 | 1.Optimize known issues |
 | 2022-09-21 | 2.1.07 | 1.Added Topon header bidding support<br>2.FlowIcon adds methods for setting custom position, size, and incentive callbacks<br>3.Optimize known issues |
-| 2022-10-27 | 2.1.08 | 1.New optional template for flowicon<br>2.New optional endcard template for reward video。<br>3.Optimisation of known issues。 |
+| 2022-10-27 | 2.1.08 | 1.New optional template for flowicon<br>2.New optional endcard template for reward video<br>3.Optimize known issues |
 
 ## Version Upgrade Notes
 | Original version | New version | Precautions |

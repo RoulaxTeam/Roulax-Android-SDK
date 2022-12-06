@@ -12,6 +12,7 @@
 | 2022-08-23 | 2.1.05 | 1.优化已知问题<br>2.增加下载模块 |
 | 2022-09-09 | 2.1.06 | 1.优化已知问题 |
 | 2022-09-21 | 2.1.07 | 1.增加Topon头部竞价支持<br>2.FlowIcon增加设置自定义位置，大小的方法以及激励回调<br>3.优化已知问题 |
+| 2022-10-27 | 2.1.08 | 1.flowicon新增可选模板<br>2.激励视频新增endcard模板。<br>3.优化已知问题。 |
 | 2022-12-01 | 2.1.10 | 1.新增H5互动Game曝光（onGameShow）和参与点击（onGameStart）回调<br>2.splash新增摇一摇跳转<br>3.优化广告流程，优化广告数据和广告效果<br>4.优化已知问题 |
 
 ## 版本升级注意事项 
@@ -43,7 +44,7 @@
 ### 添加SDK依赖的第三方库
 	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
 	implementation 'androidx.appcompat:appcompat:1.3.0'
-	implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 
 ### 添加SDK依赖的权限申明
 
@@ -52,15 +53,15 @@
 
 
 ### SDK混淆规则
-
+    
 	-keep class com.rad.**
 	-keepclassmembers public class com.rad.**{
-	    *;
+        *;
 	}
 	-keep interface com.rad.**
-	-keepclassmembers interface com.rad.**{
-	    *;
-	}	
+    -keepclassmembers interface com.rad.**{
+        *;
+    }	
 
 
 ## 初始化
@@ -71,7 +72,7 @@
         override fun onSDKInitSuccess() {
             RXLogUtil.d("onSDKInitSuccess")
         }
-    
+
         override fun onSDKInitFailure(error: RError?) {
            RXLogUtil.d("onSDKInitFailure ${error?.msg}")
         }
@@ -100,22 +101,22 @@
 开屏广告的场景，您可以在应用启动或应用后台切换至前台时进行展示，但是为了您的收益最大化，您可以联系Roulax的商务和运营，辅助您设计最优变现思路和方式，Roulax将倾尽全力为您提供最好的服务。
 
 #### 请求广告
-
+	
 	RXSDK.createRXSdkAd().loadSplash(YOU_UNIT_ID, TIMEOUT, object : RXSplashAdListener {
 		
-	    override fun success(adInfo: RXAdInfo, splashAd: RXSplashAd) {
-	        RXLogUtil.d( "Splash load success")
-	    }
+        override fun success(adInfo: RXAdInfo, splashAd: RXSplashAd) {
+            RXLogUtil.d( "Splash load success")
+        }
 		
-	    override fun failure(adInfo: RXAdInfo, error: RError) {
-	        RXLogUtil.d("Splash load failure $error")
-	    }
+        override fun failure(adInfo: RXAdInfo, error: RError) {
+            RXLogUtil.d("Splash load failure $error")
+        }
 		
-	    override fun timeout(adInfo: RXAdInfo) {
-	        RXLogUtil.d("Splash load timeout")
-	    }
-	})
-
+        override fun timeout(adInfo: RXAdInfo) {
+            RXLogUtil.d("Splash load timeout")
+        }
+    })
+	
 
 #### 参数说明
 

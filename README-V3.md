@@ -829,7 +829,7 @@ NativeIcon广告是Roulax平台特殊的广告形式，该广告可以为开发�
 
 ## OfferWall Native
 
-<img src="../img/ow-native.png" width="30%"/>
+<img src="../img/https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/img/ow-native.png.png" width="30%"/>
 
 #### 请求广告
 
@@ -916,7 +916,7 @@ RXSDK.createRXSdkAd().loadOWNative(context, "unit_id", requestNum, object: RXSdk
 
 ## OfferWall悬浮窗广告
 
-<img src="../img/ow-flowicon.png" width="30%"/>
+<img src="../img/https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/img/ow-flowicon.png" width="30%"/>
 
 #### 请求广告
 
@@ -1085,7 +1085,7 @@ RXSDK.createRXSdkAd().loadOWNative(context, "unit_id", requestNum, object: RXSdk
 
 ## OfferWall NativeIcon广告
 
-<img src="../img/ow-nativeicon.png" width="30%"/>
+<img src=".https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/img/ow-nativeicon.png" width="30%"/>
 
 #### 请求广告
 

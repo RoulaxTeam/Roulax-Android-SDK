@@ -6,6 +6,8 @@
 | RoulaxSDK版本 | Adapter版本 | 日志 |
 |--|--|--|
 | 2.1.01 | [Roulax-Topon-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_2.1.01_release.aar) | 新增广告模板支持 |
+| 2.1.07 | [Roulax-Topon-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_2.1.07-release.aar) | 支持头部竞价 |
+| 2.1.08 | [Roulax-Topon-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_2.1.08-release.aar) | 优化已知问题 |
 
 ### 支持的广告
 1. 插屏广告
@@ -58,7 +60,7 @@ v5.6.4 及以上版本
 
 ### 2. 下载Roulax SDK
 
-### 3. 下载[Roulax-Adapter-TopOn](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_0.0.3-release.aar)
+### 3. 下载[Roulax-Adapter-TopOn](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_2.1.07-release.aar)
 
 ## 检查是否接入成功
 

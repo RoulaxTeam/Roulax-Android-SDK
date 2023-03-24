@@ -6,13 +6,20 @@
 ### 更新日志
 | 日期 | 版本 | 日志 |
 |--|--|--|
-| 2022-06-17 | 2.0.00 | Roulax SDK Release |
-| 2022-07-14 | 2.1.01 | 广告模板支持 |
-| 2022-08-01 | 2.1.04 | 优化播放器兼容性问题，增加奔溃上报模块 |
-| 2022-08-23 | 2.1.05 | SDK广告策略优化，点击跳转优化，埋点模块优化，增加下载模块 |
-| 2022-09-09 | 2.1.06 | 部分内部逻辑优化，缓存优化 |
-| 2022-09-21 | 2.1.07 | 增加Topon头部竞价支持，FlowIcon增加设置自定义位置，大小的方法以及激励回调 |
+| 2022-06-17 | 2.0.00 | 1.Roulax SDK Release |
+| 2022-07-14 | 2.1.01 | 1.广告模板支持 |
+| 2022-08-01 | 2.1.04 | 1.优化已知问题 |
+| 2022-08-23 | 2.1.05 | 1.优化已知问题<br>2.增加下载模块 |
+| 2022-09-09 | 2.1.06 | 1.优化已知问题 |
+| 2022-09-21 | 2.1.07 | 1.增加Topon头部竞价支持<br>2.FlowIcon增加设置自定义位置，大小的方法以及激励回调<br>3.优化已知问题 |
+| 2022-10-27 | 2.1.08 | 1.flowicon新增可选模板<br>2.激励视频新增endcard模板。<br>3.优化已知问题。 |
+| 2022-12-01 | 2.1.10 | 1.新增H5互动Game曝光（onGameShow）和参与点击（onGameStart）回调<br>2.splash新增摇一摇跳转<br>3.优化广告流程，优化广告数据和广告效果<br>4.优化已知问题 |
+| 2022-12-27 | 2.1.11 | 1.优化RV/IV 类型的广告链路和性能；使得广告投放更加精准，提升广告收益 |
 
+## 版本升级注意事项 
+| 原版本 | 新版本 | 注意事项 |
+| :---: | :---: | :--- |
+| 2.1.04 | 2.1.07 | 1、FlowIcon新增自定位置<br>fun setLocation(x: Int, y: Int) 设置悬浮窗位置（优先级高）<br>fun setPercentLocation(xPercent: Int, yPercent: Int) 按照屏幕百分比设置悬浮窗位置（优先级低）<br>2、FlowIcon新增自定大小<br>fun setSize(width: Int, height: Int) 设置悬浮窗大小<br>3、FlowIcon新增激励回调<br>fun onRewarded(adInfo: RXAdInfo) |
 
 ## 使用方式
 
@@ -33,7 +40,7 @@
 | rad_library_rewardvideo-release.aar 	| rewardvideo广告库  | × |
 | rad_library_trace-release.aar         | sdk奔溃上报库      |  ×  |
 | rad_library_playercommon-release.aar 	| sdk视频依赖库      | 如果需要rewardvideo或interstitial广告类型，则必要 |
-| rad_library_download-release.aar 		| sdk下载模块 	    | 线下包如果需要sdk下载功能，则可依赖|
+| rad_library_download-release.aar 		| sdk下载模块 	    | 线下包(非GP开发者)如果需要sdk下载功能，则可依赖.<br>GP开发者建议不依赖.|
 
 ### 添加SDK依赖的第三方库
 	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
@@ -142,17 +149,26 @@
         override fun onShowSuccess(adInfo: RXAdInfo) {
             RXLogUtil.d("Splash onShowSuccess")
         }
-
+    
         override fun onShowFailure(adInfo: RXAdInfo, error: RError) {
             RXLogUtil.d("Splash onShowFailure==>$error")
         }
-
+    
         override fun onClick(adInfo: RXAdInfo) {
             RXLogUtil.d("Splash onClick")
         }
-
+    
         override fun onDismiss(adInfo: RXAdInfo) {
             RXLogUtil.d("Splash onDismiss")
+        }
+    })
+    mRXSplashAd.setRXGameListener(object : RXGameListener {
+        override fun onGameShow(adInfo: RXAdInfo) {
+            logToast("splash ad on game show")
+        }
+    
+        override fun onGameStart(adInfo: RXAdInfo) {
+            logToast("splash ad on game start")
         }
     })
 
@@ -166,47 +182,47 @@
 
 #### 展示广告
 	val splashView = mRXSplashAd.getSplashView(activity)
-    splashView?.let {
-        mSplashContainer.addView(it)
-    }?:let {
-        RXLogUtil.d("Splash view isEmpty")
-    }
+	splashView?.let {
+	    mSplashContainer.addView(it)
+	}?:let {
+	    RXLogUtil.d("Splash view isEmpty")
+	}
 
 #### 示例代码
 
     RXSDK.createRXSdkAd().loadSplash(YOU_UNIT_ID, TIMEOUT, object : RXSplashAdListener {
-		
+    	
         override fun success(adInfo: RXAdInfo, splashAd: RXSplashAd) {
             RXLogUtil.d( "Splash load success")
-			splashAd.setEventListener(object : RXSplashEventListener {
-		        override fun onShowSuccess(adInfo: RXAdInfo) {
-		            RXLogUtil.d("Splash onShowSuccess")
-		        }
-		
-		        override fun onShowFailure(adInfo: RXAdInfo, error: RError) {
-		            RXLogUtil.d("Splash onShowFailure==>$error")
-		        }
-		
-		        override fun onClick(adInfo: RXAdInfo) {
-		            RXLogUtil.d("Splash onClick")
-		        }
-		
-		        override fun onDismiss(adInfo: RXAdInfo) {
-		            RXLogUtil.d("Splash onDismiss")
-		        }
-		    })
-			val splashView = splashAd.getSplashView(activity)
-		    splashView?.let {
-		        mSplashContainer.addView(it)
-		    }?:let {
-		        RXLogUtil.d("Splash view isEmpty")
-		    }
+    		splashAd.setEventListener(object : RXSplashEventListener {
+    	        override fun onShowSuccess(adInfo: RXAdInfo) {
+    	            RXLogUtil.d("Splash onShowSuccess")
+    	        }
+    	
+    	        override fun onShowFailure(adInfo: RXAdInfo, error: RError) {
+    	            RXLogUtil.d("Splash onShowFailure==>$error")
+    	        }
+    	
+    	        override fun onClick(adInfo: RXAdInfo) {
+    	            RXLogUtil.d("Splash onClick")
+    	        }
+    	
+    	        override fun onDismiss(adInfo: RXAdInfo) {
+    	            RXLogUtil.d("Splash onDismiss")
+    	        }
+    	    })
+    		val splashView = splashAd.getSplashView(activity)
+    	    splashView?.let {
+    	        mSplashContainer.addView(it)
+    	    }?:let {
+    	        RXLogUtil.d("Splash view isEmpty")
+    	    }
         }
-		
+    	
         override fun failure(adInfo: RXAdInfo, error: RError) {
             RXLogUtil.d("Splash load failure $error")
         }
-		
+    	
         override fun timeout(adInfo: RXAdInfo) {
             RXLogUtil.d("Splash load timeout")
         }
@@ -283,6 +299,15 @@ RXSDK.createRXSdkAd().loadRewardVideo("unit_id", object : RXSdkAd.RXRewardVideoA
             }
 
         })
+        rewardVideoAd.setRXGameListener(object : RXGameListener {
+            override fun onGameShow(adInfo: RXAdInfo) {
+                logToast("rewardvideo ad on game show")
+            }
+
+            override fun onGameStart(adInfo: RXAdInfo) {
+                logToast("rewardvideo ad on game start")
+            }
+        })
         if (rewardVideoAd.isReady()) {
             rewardVideoAd.show()
         }
@@ -301,10 +326,10 @@ RXSDK.createRXSdkAd().loadRewardVideo("unit_id", object : RXSdkAd.RXRewardVideoA
 
 #### 请求广告
     RXSDK.createRXSdkAd().loadInterstitial("unit_id", object : RXSdkAd.RXInterstitialAdListener {
-	    override fun success(adInfo: RXAdInfo, interAd: RXInterstitialAd) {
-			// load ad success, return RXInterstitialAd
-	    }
-
+        override fun success(adInfo: RXAdInfo, interAd: RXInterstitialAd) {
+    		// load ad success, return RXInterstitialAd
+        }
+    
         override fun failure(adInfo: RXAdInfo, error: RError) {
             
         }
@@ -350,6 +375,15 @@ RXSDK.createRXSdkAd().loadInterstitial("unit_id", object : RXSdkAd.RXInterstitia
                     
                 }
 
+            })
+            interAd.setRXGameListener(object : RXGameListener {
+                override fun onGameShow(adInfo: RXAdInfo) {
+                    logToast("inter ad on game show")
+                }
+
+                override fun onGameStart(adInfo: RXAdInfo) {
+                    logToast("inter ad on game start")
+                }
             })
             if (interAd.isReady()) {
                 interAd.show()
@@ -427,7 +461,16 @@ RXSDK.createRXSdkAd().loadBanner(context, "unit_id", object: RXSdkAd.RXBannerAdL
                         override fun onRenderSuccess(pView: View) {
                             findViewById<ViewGroup>(R.id.container_banner).addView(pView)
                         }
-            	}
+            	})
+            	bannerAd.setRXGameListener(object : RXGameListener {
+                    override fun onGameShow(adInfo: RXAdInfo) {
+                        logToast("banner ad on game show")
+                    }
+
+                    override fun onGameStart(adInfo: RXAdInfo) {
+                        logToast("banner ad on game start")
+                    }
+                })
 				bannerAd.render()
 			}
 	})
@@ -501,6 +544,15 @@ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd
                                 findViewById<ViewGroup>(R.id.container_native).addView(pView)
                             }
                         })
+                    nativeAdList[0].setRXGameListener(object : RXGameListener {
+                        override fun onGameShow(adInfo: RXAdInfo) {
+                            logToast("native ad on game show")
+                        }
+
+                        override fun onGameStart(adInfo: RXAdInfo) {
+                            logToast("native ad on game start")
+                        }
+                    })
 					nativeAdList[0].render()
                 }
             }
@@ -514,19 +566,19 @@ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd
 悬浮窗广告是Roulax平台特殊的广告形式，该广告形式以灵活的配置可悬浮于开发者应用中，并提供展示广告的入口；
 
 #### 请求广告
-	
-	RXSDK.createRXSdkAd().loadFlowIcon(unitId, new RXSdkAd.RXFlowIconAdListener() {
-        @Override
-        public void success(@NonNull RXAdInfo adInfo, @NonNull RXFlowIconAd flowIconAd) {
-			RXLogUtil.d( "RXSDK flowicon load success")
-        }
 
-        @Override
-        public void failure(@NonNull RXAdInfo adInfo, @NonNull RError error) {
-			RXLogUtil.d( "RXSDK flowicon load fail, error " + error)
-        }
-    });
+	RXSDK.createRXSdkAd().loadFlowIcon(unitId, new RXSdkAd.RXFlowIconAdListener() {
+	    @Override
+	    public void success(@NonNull RXAdInfo adInfo, @NonNull RXFlowIconAd flowIconAd) {
+			RXLogUtil.d( "RXSDK flowicon load success")
+	    }
 	
+	    @Override
+	    public void failure(@NonNull RXAdInfo adInfo, @NonNull RError error) {
+			RXLogUtil.d( "RXSDK flowicon load fail, error " + error)
+	    }
+	});
+
 
 #### 参数说明
 
@@ -558,10 +610,9 @@ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd
 | fun setFlowIdelCallback(callback: OnFlowIdelCallback) | 设置悬浮窗广告空闲交互监听器，当用户在广告空闲时点击FlowIcon时进行回调。开发者可在该回调中实现广告空闲时的用户交互，SDK默认会实现 |
 | fun setFlowEventListener(eventListener: RXFlowIconEventListener) | 设置悬浮窗广告交互监听器 |
 | fun setImmersionStatusBar(immersionStatusBar: Boolean) | 设置悬浮窗是否沉浸式状态栏（全屏应用、游戏建议传true） |
-| fun setLocation(x: Int, y: Int) | 设置悬浮窗位置 |
-| fun setPercentLocation(xPercent: Int, yPercent: Int) | 按照屏幕百分比设置悬浮窗位置 |
+| fun setLocation(x: Int, y: Int) | 设置悬浮窗位置（优先级高） |
+| fun setPercentLocation(xPercent: Int, yPercent: Int) | 按照屏幕百分比设置悬浮窗位置（优先级低） |
 | fun setSize(width: Int, height: Int) | 设置悬浮窗大小 |
-| fun setDragEnable(dragEnable: Boolean) | 设置悬浮窗是否可拖动 |
 
 #### 设置悬浮窗参数
 
@@ -570,46 +621,55 @@ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd
             .setFlowEventListener(new RXFlowIconEventListener() {
                 @Override
                 public void onCreated(@NonNull RXAdInfo adInfo) {
-					RXLogUtil.d("RXSDK flowicon on created")
+    				RXLogUtil.d("RXSDK flowicon on created")
                 }
-
+    
                 @Override
                 public void onCreateError(@NonNull RXAdInfo adInfo, @NonNull RError error) {
-					RXLogUtil.d("RXSDK flowicon on created error: ${error.getErrorString()}")
+    				RXLogUtil.d("RXSDK flowicon on created error: ${error.getErrorString()}")
                 }
-
+    
                 @Override
                 public void onShow(@NonNull RXAdInfo adInfo) {
-					RXLogUtil.d("RXSDK flowicon on show")
+    				RXLogUtil.d("RXSDK flowicon on show")
                 }
-
+    
                 @Override
                 public void onShowFailure(@NonNull RXAdInfo adInfo, @NonNull RError error) {
-					RXLogUtil.d("RXSDK flowicon on show fail, error: ${error.getErrorString()}")
+    				RXLogUtil.d("RXSDK flowicon on show fail, error: ${error.getErrorString()}")
                 }
-
+    
                 @Override
                 public void onHide(@NonNull RXAdInfo adInfo) {
-					RXLogUtil.d("RXSDK flowicon on hide")
+    				RXLogUtil.d("RXSDK flowicon on hide")
                 }
-
+    
                 @Override
                 public void onDismiss(@NonNull RXAdInfo adInfo) {
-					RXLogUtil.d("RXSDK flowicon on dismiss")
+    				RXLogUtil.d("RXSDK flowicon on dismiss")
                 }
-
+    
                 @Override
                 public void onClick(@NonNull RXAdInfo adInfo) {
-					RXLogUtil.d("RXSDK flowicon on click")
+    				RXLogUtil.d("RXSDK flowicon on click")
                 }
              })
-			.setFlowIdelCallback(new OnFlowIdelCallback() {
-				@Override
+             .setRXGameListener(object : RXGameListener {
+                 override fun onGameShow(adInfo: RXAdInfo) {
+                     logToast("FlowIcon onGameShow $adInfo")
+                 }
+    
+                 override fun onGameStart(adInfo: RXAdInfo) {
+                      logToast("FlowIcon onGameStart $adInfo")
+                 }
+             })
+    		.setFlowIdelCallback(new OnFlowIdelCallback() {
+    			@Override
                 public void idelHandler() {
                     RXLogUtil.d("RXSDK flowicon on idel callback")
                 }
             })
-			.build());
+    		.build());
 
 #### RXFlowIconEventListener说明
 | 方法 | 含义 |
@@ -644,57 +704,62 @@ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd
             public void success(@NonNull RXAdInfo adInfo, @NonNull RXFlowIconAd flowIconAd) {
                 Log.i(BridgeTag, "RXSDK flowicon load success");
                 flowIconAd.setFlowConfig(new FlowConfig.Builder()
-	                .setImmersionStatusBar(true)
-	                .setFlowEventListener(new RXFlowIconEventListener() {
-	                    @Override
-	                    public void onCreated(@NonNull RXAdInfo adInfo) {
-							RXLogUtil.d("RXSDK flowicon on created")
-	                    }
-	
-	                    @Override
-	                    public void onCreateError(@NonNull RXAdInfo adInfo, @NonNull RError error) {
-							RXLogUtil.d("RXSDK flowicon on created error: ${error.getErrorString()}")
-	                    }
-	
-	                    @Override
-	                    public void onShow(@NonNull RXAdInfo adInfo) {
-							RXLogUtil.d("RXSDK flowicon on show")
-	                    }
-	
-	                    @Override
-	                    public void onShowFailure(@NonNull RXAdInfo adInfo, @NonNull RError error) {
-							RXLogUtil.d("RXSDK flowicon on show error: ${error.getErrorString()}")
-	                    }
-	
-	                    @Override
-	                    public void onHide(@NonNull RXAdInfo adInfo) {
-							RXLogUtil.d("RXSDK flowicon on hide")
-	                    }
-	
-	                    @Override
-	                    public void onDismiss(@NonNull RXAdInfo adInfo) {
-							RXLogUtil.d("RXSDK flowicon on dismiss")
-	                    }
-	
-	                    @Override
-	                    public void onClick(@NonNull RXAdInfo adInfo) {
-							RXLogUtil.d("RXSDK flowicon on click")
-	                    }
-	                })
-	                .setFlowIdelCallback(new OnFlowIdelCallback() {
-	
-	                    @Override
-	                    public void idelHandler() {
-							RXLogUtil.d("RXSDK flowicon on idel callback")
-	                    }
-	                })
-	                .build());
-				flowIconAd.show(activity)
+                    .setImmersionStatusBar(true)
+                    .setFlowEventListener(new RXFlowIconEventListener() {
+                        @Override
+                        public void onCreated(@NonNull RXAdInfo adInfo) {
+    						RXLogUtil.d("RXSDK flowicon on created")
+                        }
+    
+                        @Override
+                        public void onCreateError(@NonNull RXAdInfo adInfo, @NonNull RError error) {
+    						RXLogUtil.d("RXSDK flowicon on created error: ${error.getErrorString()}")
+                        }
+    
+                        @Override
+                        public void onShow(@NonNull RXAdInfo adInfo) {
+    						RXLogUtil.d("RXSDK flowicon on show")
+                        }
+    
+                        @Override
+                        public void onShowFailure(@NonNull RXAdInfo adInfo, @NonNull RError error) {
+    						RXLogUtil.d("RXSDK flowicon on show error: ${error.getErrorString()}")
+                        }
+    
+                        @Override
+                        public void onHide(@NonNull RXAdInfo adInfo) {
+    						RXLogUtil.d("RXSDK flowicon on hide")
+                        }
+    
+                        @Override
+                        public void onDismiss(@NonNull RXAdInfo adInfo) {
+    						RXLogUtil.d("RXSDK flowicon on dismiss")
+                        }
+    
+                        @Override
+                        public void onClick(@NonNull RXAdInfo adInfo) {
+    						RXLogUtil.d("RXSDK flowicon on click")
+                        }
+    
+                        @Override
+                        public void onRewarded(@NonNull RXAdInfo adInfo) {
+                            RXLogUtil.d("RXSDK flowicon onRewarded")
+                        }
+                    })
+                    .setFlowIdelCallback(new OnFlowIdelCallback() {
+    
+                        @Override
+                        public void idelHandler() {
+    						RXLogUtil.d("RXSDK flowicon on idel callback")
+                        }
+                    })
+                    .build());
+    			flowIconAd.show(activity)
             }
-
+    
             @Override
             public void failure(@NonNull RXAdInfo adInfo, @NonNull RError error) {
-				RXLogUtil.d("RXSDK flowicon on load error: ${error.getErrorString()}")
+    			RXLogUtil.d("RXSDK flowicon on load error: ${error.getErrorString()}")
             }
         });
 
@@ -703,16 +768,16 @@ RXSDK.createRXSdkAd().loadNative(context, "unit_id", requestNum, object: RXSdkAd
 NativeIcon广告是Roulax平台特殊的广告形式，该广告可以为开发者提供入口素材以供开发者渲染，并且可以为开发者展示精彩的广告。
 
 #### 请求广告
-	
-	RXSDK.createRXSdkAd().loadNativeIcon("unit_id",  object: RXSdkAd.RXNativeIconAdListener {
-            override fun failure(adInfo: RXAdInfo, error: RXError) {
-                RXLogUtil.d("native icon on load fail: ${error.msg}")
-            }
 
-            override fun success(adInfo: RXAdInfo, nativeIconAd: RXNativeIconAd) {
-                RXLogUtil.d("native icon on load success")
-            }
-        })
+	RXSDK.createRXSdkAd().loadNativeIcon("unit_id",  object: RXSdkAd.RXNativeIconAdListener {
+	        override fun failure(adInfo: RXAdInfo, error: RXError) {
+	            RXLogUtil.d("native icon on load fail: ${error.msg}")
+	        }
+	
+	        override fun success(adInfo: RXAdInfo, nativeIconAd: RXNativeIconAd) {
+	            RXLogUtil.d("native icon on load success")
+	        }
+	    })
 
 #### NativeIconAd
 
@@ -734,45 +799,54 @@ NativeIcon广告是Roulax平台特殊的广告形式，该广告可以为开发�
 
 #### 示例代码
 	RXSDK.createRXSdkAd().loadNativeIcon("unit_id",  object: RXSdkAd.RXNativeIconAdListener {
-            override fun failure(adInfo: RXAdInfo, error: RXError) {
-                RXLogUtil.d("native icon on load fail: ${error.msg}")
-            }
-
-            override fun success(adInfo: RXAdInfo, nativeIconAd: RXNativeIconAd) {
-                RXLogUtil.d("native icon on load success")
-                nativeIconAd.setRXNativeIconListener(object : RXNativeIconEventListener {
-                    override fun onAdShowSuccess(adInfo: RXAdInfo) {
-                        RXLogUtil.d("native icon on ad show success")
-                    }
-
-                    override fun onAdShowFailure(adInfo: RXAdInfo, adError: RXError) {
-                        RXLogUtil.d("native icon on ad show failure")
-                    }
-
-                    override fun onRewarded(adInfo: RXAdInfo) {
-                        RXLogUtil.d("native icon on ad reward")
-                    }
-
-                    override fun onClosed(adInfo: RXAdInfo) {
-                        RXLogUtil.d("native icon on ad close")
-                    }
-
-                    override fun onRefresh(adInfo: RXAdInfo, imgUrl: String) {
-                        findViewById<ImageView>(R.id.container_native_icon).apply {
-                            Glide.with(this).load(imgUrl).into(this)
-                        }
-                        RXLogUtil.d("native icon on ad refresh")
-                    }
-                })
-
-                findViewById<ImageView>(R.id.container_native_icon).apply {
-                    Glide.with(this).load(nativeIconAd.getIconResource()).into(this)
-                    setOnClickListener {
-                        nativeIconAd.click()
-                    }
-                }
-            }
-        })
+	        override fun failure(adInfo: RXAdInfo, error: RXError) {
+	            RXLogUtil.d("native icon on load fail: ${error.msg}")
+	        }
+	
+	        override fun success(adInfo: RXAdInfo, nativeIconAd: RXNativeIconAd) {
+	            RXLogUtil.d("native icon on load success")
+	            nativeIconAd.setRXNativeIconListener(object : RXNativeIconEventListener {
+	                override fun onAdShowSuccess(adInfo: RXAdInfo) {
+	                    RXLogUtil.d("native icon on ad show success")
+	                }
+	
+	                override fun onAdShowFailure(adInfo: RXAdInfo, adError: RXError) {
+	                    RXLogUtil.d("native icon on ad show failure")
+	                }
+	
+	                override fun onRewarded(adInfo: RXAdInfo) {
+	                    RXLogUtil.d("native icon on ad reward")
+	                }
+	
+	                override fun onClosed(adInfo: RXAdInfo) {
+	                    RXLogUtil.d("native icon on ad close")
+	                }
+	
+	                override fun onRefresh(adInfo: RXAdInfo, imgUrl: String) {
+	                    findViewById<ImageView>(R.id.container_native_icon).apply {
+	                        Glide.with(this).load(imgUrl).into(this)
+	                    }
+	                    RXLogUtil.d("native icon on ad refresh")
+	                }
+	            })
+	            nativeIconAd.setRXGameListener(object : RXGameListener {
+	                 override fun onGameShow(adInfo: RXAdInfo) {
+	                     logToast("native icon on game show")
+	                 }
+	
+	                 override fun onGameStart(adInfo: RXAdInfo) {
+	                     logToast("native icon on game start")
+	                 }
+	            })
+	
+	            findViewById<ImageView>(R.id.container_native_icon).apply {
+	                Glide.with(this).load(nativeIconAd.getIconResource()).into(this)
+	                setOnClickListener {
+	                    nativeIconAd.click()
+	                }
+	            }
+	        }
+	    })
 
 
 

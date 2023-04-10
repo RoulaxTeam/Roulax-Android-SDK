@@ -75,7 +75,7 @@
 原则上请保持在项目Application中进行初始化操作<br>
 如果有GDPR相关需求，需要在用户授权GDPR之后进行初始化。
     
-    //在用户同意GDPR之后
+    //在用户授权GDPR后，将其设置为true。如果用户拒绝授权，将其设置为false。
     //RXSDK.setGDPRAuth(true);
     
     RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {

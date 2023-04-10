@@ -74,7 +74,10 @@
 
 原则上请保持在项目Application中进行初始化操作<br>
 如果有GDPR相关需求，需要在用户授权GDPR之后进行初始化。
-
+    
+    //在用户同意GDPR之后
+    //RXSDK.setGDPRAuth(hasAuth);
+    
     RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {
         override fun onSDKInitSuccess() {
             RXLogUtil.d("onSDKInitSuccess")

@@ -73,7 +73,7 @@ In principle, please keep the initialization operation in the project Applicatio
 
 If there is a GDPR-related requirement, it needs to be initialized after user authorizing GDPR.
 
-    //after user authorizing GDPR
+    //after user authorizing GDPR, set it to true. If user refuse to authorize, set it to false.
     //RXSDK.setGDPRAuth(true);
     
     RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {

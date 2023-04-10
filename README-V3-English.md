@@ -73,6 +73,9 @@ In principle, please keep the initialization operation in the project Applicatio
 
 If there is a GDPR-related requirement, it needs to be initialized after user authorizing GDPR.
 
+    //after user authorizing GDPR
+    //RXSDK.setGDPRAuth(true);
+    
     RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {
         override fun onSDKInitSuccess() {
             RXLogUtil.d("onSDKInitSuccess")

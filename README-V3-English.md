@@ -814,7 +814,7 @@ Currently only support S2S way to send rewards, client-side rewards callback wil
 
 ## OfferWall Native
 
-<img src="../img/native.png" width="30%"/>
+<img src="https://github.com/RoulaxTeam/Roulax-Android-SDK/raw/master/img/native.png" width="30%"/>
 
 #### Load ad
 
@@ -901,7 +901,7 @@ Please call setRXOWNativeListener before calling the render method to ensure the
 
 ## OfferWall FlowIcon
 
-<img src="../img/flow-icon.png" width="30%"/>
+<img src="https://github.com/RoulaxTeam/Roulax-Android-SDK/raw/master/img/flow-icon.png" width="30%"/>
 
 #### Load ad
 
@@ -1069,7 +1069,7 @@ Please call setRXOWNativeListener before calling the render method to ensure the
 
 ## OfferWall NativeIcon
 
-<img src="../img/native-icon.png" width="30%"/>
+<img src="https://github.com/RoulaxTeam/Roulax-Android-SDK/raw/master/img/native-icon.png" width="30%"/>
 
 #### Load ad
 

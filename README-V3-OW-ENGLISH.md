@@ -7,6 +7,7 @@
 |--|--|--|
 | 2022-03-23 | 3.0.00 | Add OfferWall type of advertising form |
 | 2022-04-10 | 3.0.01 | Add GDPR interface and optimize OfferWall ads |
+| 2023-05-31 | 3.0.05 | Fix known issues and optimize internal logic |
 
 ## How to use
 
@@ -27,7 +28,7 @@
 ### Add SDK-dependent third-party libraries
 	implementation group: 'com.google.android.gms', name: 'play-services-ads', version: '15.0.0'
 	implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+	implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 	implementation 'androidx.recyclerview:recyclerview:1.2.1'
 	implementation 'androidx.cardview:cardview:1.0.0'
 
@@ -35,20 +36,20 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-	\*Note: In order to calculate the Offer usage time, the following permissions will be included in rad_library_ow-core-release.aar 
-	<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions"/>*/
     
+    \*Note: In order to calculate the Offer usage time, the following permissions will be included in rad_library_ow-core-release.aar 
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions"/>*/
+
 ### SDK Obfuscation Rules
 
 	-keep class com.rad.**
 	-keepclassmembers public class com.rad.**{
-        *;
+	    *;
 	}
 	-keep interface com.rad.**
-    -keepclassmembers interface com.rad.**{
-        *;
-    }	
+	-keepclassmembers interface com.rad.**{
+	    *;
+	}	
 
 
 ## Initialization
@@ -58,16 +59,16 @@ If there is a GDPR-related requirement, it needs to be initialized after user au
 
 	//after user authorizing GDPR, set it to true. If user refuse to authorize, set it to false.
 	//RXSDK.setGDPRAuth(true);
-
-    RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {
-        override fun onSDKInitSuccess() {
-            RXLogUtil.d("onSDKInitSuccess")
-        }
-
-        override fun onSDKInitFailure(error: RError?) {
-           RXLogUtil.d("onSDKInitFailure ${error?.msg}")
-        }
-    })
+	
+	RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {
+	    override fun onSDKInitSuccess() {
+	        RXLogUtil.d("onSDKInitSuccess")
+	    }
+	
+	    override fun onSDKInitFailure(error: RError?) {
+	       RXLogUtil.d("onSDKInitFailure ${error?.msg}")
+	    }
+	})
 
 #### Parameter Description
 
@@ -99,15 +100,15 @@ Currently only support S2S way to send rewards, client-side rewards callback wil
 
 #### Sample Code
 	RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {
-        override fun onSDKInitSuccess() {
-            RXLogUtil.d("onSDKInitSuccess")
+	    override fun onSDKInitSuccess() {
+	        RXLogUtil.d("onSDKInitSuccess")
 			RXWallApi.setUserId("USER_ID")
-        }
-
-        override fun onSDKInitFailure(error: RError?) {
-           RXLogUtil.d("onSDKInitFailure ${error?.msg}")
-        }
-    })
+	    }
+	
+	    override fun onSDKInitFailure(error: RError?) {
+	       RXLogUtil.d("onSDKInitFailure ${error?.msg}")
+	    }
+	})
 
 #### Parameters
 

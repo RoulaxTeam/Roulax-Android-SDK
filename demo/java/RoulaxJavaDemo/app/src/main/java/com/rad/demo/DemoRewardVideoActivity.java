@@ -18,7 +18,7 @@ import com.rad.out.reward.RXRewardVideoEventListener;
 
 public class DemoRewardVideoActivity extends AppCompatActivity implements RXRewardVideoEventListener {
 
-   private final String unitId = "154";
+   private final String unitId = "447";
    private final double bidFloor = 0.0;
    private RXRewardVideoAd rewardVideoAd;
 

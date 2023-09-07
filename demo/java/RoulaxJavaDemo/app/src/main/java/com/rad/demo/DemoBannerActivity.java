@@ -1,7 +1,7 @@
 package com.rad.demo;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -13,34 +13,25 @@ import com.rad.RXError;
 import com.rad.RXSDK;
 import com.rad.out.RXAdInfo;
 import com.rad.out.RXSdkAd;
-import com.rad.out.banner.BannerType;
 import com.rad.out.banner.RXBannerAd;
 import com.rad.out.banner.RXBannerEventListener;
 
 public class DemoBannerActivity extends AppCompatActivity {
 
-   private final String unitId = "147";
+   private final String unitId = "444";
    private final double bidFloor = 0.0;
    private RXBannerAd bannerAd;
-   private int bannerType = BannerType.SMALL;
+   private Handler mHandler;
 
    @Override
    protected void onCreate(@Nullable Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_demo_banner);
       findViewById(R.id.btn_banner_load).setOnClickListener((View view) -> loadBanner());
-      findViewById(R.id.btn_banner_render_small).setOnClickListener((View view) -> {
-         bannerType = BannerType.SMALL;
+      findViewById(R.id.btn_banner_render).setOnClickListener((View view) -> {
          renderBanner();
       });
-      findViewById(R.id.btn_banner_render_medium).setOnClickListener((View view) -> {
-         bannerType = BannerType.MEDIUM;
-         renderBanner();
-      });
-      findViewById(R.id.btn_banner_render_large).setOnClickListener((View view) -> {
-         bannerType = BannerType.LARGE;
-         renderBanner();
-      });
+      mHandler = new Handler(getMainLooper());
    }
 
    private void loadBanner() {
@@ -78,14 +69,11 @@ public class DemoBannerActivity extends AppCompatActivity {
                public void onRenderSuccess(@NonNull View view) {
                   LogUtil.toast(DemoBannerActivity.this, "banner on load success");
                   LogUtil.log("banner on ad render success");
-                  ViewGroup container;
-                  switch (bannerType) {
-                     case BannerType.SMALL: container = findViewById(R.id.container_banner_small); break;
-                     case BannerType.MEDIUM: container = findViewById(R.id.container_banner_medium); break;
-                     case BannerType.LARGE: container = findViewById(R.id.container_banner_large); break;
-                     default: container = findViewById(R.id.container_banner_small);
-                  }
-                  container.addView(view);
+                  mHandler.post(() -> {
+                     ViewGroup container;
+                     container = findViewById(R.id.container_banner_small);
+                     container.addView(view);
+                  });
                }
             });
             bannerAd = rxBannerAd;
@@ -103,7 +91,7 @@ public class DemoBannerActivity extends AppCompatActivity {
       if (bannerAd == null) {
          LogUtil.toast(DemoBannerActivity.this, "banner has not been load yet, please load first!");
       }else {
-         bannerAd.render(bannerType);
+         bannerAd.render();
       }
    }
    

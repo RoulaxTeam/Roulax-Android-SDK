@@ -1,6 +1,7 @@
 package com.rad.demo;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,8 +21,9 @@ import com.rad.out.nativeicon.RXNativeIconEventListener;
 
 public class DemoNativeIconActivity extends AppCompatActivity {
    
-   private final String unitId = "172";
+   private final String unitId = "442";
    private ImageView iconImageView;
+   private Handler mHandler;
 
    @Override
    protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class DemoNativeIconActivity extends AppCompatActivity {
       iconImageView = findViewById(R.id.container_native_icon);
       Button loadButton = findViewById(R.id.btn_native_icon_load);
       loadButton.setOnClickListener((View view) -> loadNativeIcon());
+      mHandler = new Handler(getMainLooper());
    }
 
    private void loadNativeIcon() {
@@ -71,8 +74,10 @@ public class DemoNativeIconActivity extends AppCompatActivity {
                   LogUtil.log("native icon on show failure, error" + rxError);
                }
             });
-            Glide.with(iconImageView).load(rxNativeIconAd.getIconResource()).into(iconImageView);
-            iconImageView.setOnClickListener((View view) -> rxNativeIconAd.click());
+            mHandler.post(() -> {
+               Glide.with(iconImageView).load(rxNativeIconAd.getIconResource()).into(iconImageView);
+               iconImageView.setOnClickListener((View view) -> rxNativeIconAd.click());
+            });
          }
 
          @Override

@@ -19,7 +19,7 @@ import java.util.HashMap;
 
 public class DemoSplashAdActivity extends AppCompatActivity {
 
-   private final String unitId = "144";
+   private final String unitId = "445";
    private final int timeout = 5;
    private final double bidFloor = 0.0;
    private static final HashMap<String, RXSplashAd> RXSPLASH_MANAGER = new HashMap();

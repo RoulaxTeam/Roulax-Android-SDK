@@ -15,88 +15,159 @@
         android:layout_marginTop="18dp"
         app:srcCompat="@mipmap/roulax_demo_logo" />
 
-    <Button
-        android:id="@+id/button_witch"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="旋转屏幕"
-        style="@style/DemoButton" />
-
-    <Button
-        android:id="@+id/button_init"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="SDK初始化"
-        style="@style/DemoButton"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_rv"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="激励视频"
-        style="@style/DemoButton"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_splash"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="开屏"
-        style="@style/DemoButton"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_banner"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_splash"
-        app:layout_constraintBottom_toTopOf="@+id/button_flowicon"
-        android:text="横幅广告"
-        style="@style/DemoButton"/>
-
-    <Button
-        android:id="@+id/button_flowicon"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="悬浮窗广告"
-        style="@style/DemoButton"
-        tools:ignore="MissingConstraints"/>
-
-    <Button
-        android:id="@+id/button_native"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="原生广告"
-        style="@style/DemoButton"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_inter"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="插屏广告"
-        style="@style/DemoButton"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button_native_icon"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Native Icon"
-        style="@style/DemoButton"
-        tools:ignore="MissingConstraints" />
-
-    <androidx.constraintlayout.helper.widget.Flow
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/imageView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:constraint_referenced_ids="button_witch, button_init, button_rv, button_splash, button_banner, button_native, button_inter, button_native_icon, button_flowicon"
-        app:flow_wrapMode="aligned"
-        app:flow_horizontalGap="25dp"
-        app:flow_verticalGap="15dp"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:id="@+id/gdpr_container"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="GDPR开关\n请在初始化之前设置"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"/>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/gdpr_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_witch"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="旋转屏幕"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_init"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="SDK初始化"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_rv"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="激励视频"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_splash"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="开屏"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_banner"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_splash"
+                app:layout_constraintBottom_toTopOf="@+id/button_flowicon"
+                android:text="横幅广告"
+                style="@style/DemoButton"/>
+
+            <Button
+                android:id="@+id/button_flowicon"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="悬浮窗广告"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints"/>
+
+            <Button
+                android:id="@+id/button_native"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="原生广告"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_inter"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="插屏广告"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_native_icon"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Native Icon"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tv_ow_user_rewards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Reward: 0"
+                tools:ignore="MissingConstraints"/>
+
+            <Button
+                android:id="@+id/button_ow_native_icon"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="OW Native Icon"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_ow_flow_icon"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="OW Flow Icon"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/button_ow_native"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="OW Native"
+                style="@style/DemoButton"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:constraint_referenced_ids="gdpr_container, button_witch, button_init, button_rv, button_splash, button_banner, button_native, button_inter, button_native_icon, button_flowicon, tv_ow_user_rewards, button_ow_native, button_ow_native_icon, button_ow_flow_icon"
+                app:flow_wrapMode="aligned"
+                app:flow_horizontalGap="25dp"
+                app:flow_verticalGap="15dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

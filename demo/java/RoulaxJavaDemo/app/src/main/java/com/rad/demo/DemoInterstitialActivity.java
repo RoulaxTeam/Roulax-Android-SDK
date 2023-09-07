@@ -18,7 +18,7 @@ import com.rad.out.interstitial.RXInterstitialEventListener;
 
 public class DemoInterstitialActivity extends AppCompatActivity implements RXInterstitialEventListener {
 
-   private final String unitId = "158";
+   private final String unitId = "446";
    private final double bidFloor = 0.0;
    private RXInterstitialAd interAd;
 

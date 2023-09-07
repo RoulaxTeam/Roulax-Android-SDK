@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btn_banner_load"
+        android:id="@+id/btn_native_load"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_chainStyle="packed"
@@ -13,24 +14,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn_banner_render"
+        app:layout_constraintBottom_toTopOf="@id/btn_native_render"
         android:text="load"
         style="@style/DemoButton"/>
 
     <Button
-        android:id="@+id/btn_banner_render"
+        android:id="@+id/btn_native_render"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_banner_load"
+        app:layout_constraintTop_toBottomOf="@id/btn_native_load"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="render"
         style="@style/DemoButton"/>
 
     <FrameLayout
-        android:id="@+id/container_banner_small"
+        android:id="@+id/container_native"
         android:layout_width="350dp"
         android:layout_height="0dp"
         android:elevation="4dp"

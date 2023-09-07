@@ -14,6 +14,8 @@
 | 2022-09-21 | 2.1.07 | 增加Topon头部竞价支持，FlowIcon增加设置自定义位置，大小的方法以及激励回调 |
 | 2022-03-23 | 3.0.00 | 增加OfferWall类型广告形式 |
 | 2022-04-10 | 3.0.01 | 增加GDPR相关接口，优化OfferWall广告 |
+| 2023-05-31 | 3.0.05 | 修复已知问题，优化内部逻辑 |
+| 2023-08-14 | 3.0.11 | 修复已知问题；增加SDK offerwall奖励查询和回调接口 |
 
 
 ## 使用方式
@@ -54,9 +56,9 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-	\*注意: 如果接入OfferWall类型广告，为了计算Offer使用时长，rad_library_ow-core-release.aar中会包含以下权限
-	<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions"/>*/
+    
+    \*注意: 如果接入OfferWall类型广告，为了计算Offer使用时长，rad_library_ow-core-release.aar中会包含以下权限
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions"/>*/
 
 
 ### SDK混淆规则
@@ -814,15 +816,15 @@ NativeIcon广告是Roulax平台特殊的广告形式，该广告可以为开发�
 
 #### 示例代码
 	RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {
-        override fun onSDKInitSuccess() {
-            RXLogUtil.d("onSDKInitSuccess")
+	    override fun onSDKInitSuccess() {
+	        RXLogUtil.d("onSDKInitSuccess")
 			RXWallApi.setUserId("USER_ID")
-        }
-
-        override fun onSDKInitFailure(error: RError?) {
-           RXLogUtil.d("onSDKInitFailure ${error?.msg}")
-        }
-    })
+	    }
+	
+	    override fun onSDKInitFailure(error: RError?) {
+	       RXLogUtil.d("onSDKInitFailure ${error?.msg}")
+	    }
+	})
 
 
 #### 参数说明
@@ -830,6 +832,30 @@ NativeIcon广告是Roulax平台特殊的广告形式，该广告可以为开发�
 | 参数 | 含义 |
 | --- | --- |
 | USER_ID | 开发者自己定义生成的唯一用户标识 |
+
+
+
+## 用户奖励
+
+<b>如果需要通过SDK查询OfferWall的用户奖励，可在设置唯一用户标识后通过RXWallApi.getUserRewarded()进行查询；</b> 
+
+```kotlin
+val userReward = RXWallApi.getUserRewarded()
+```
+
+<b>如果需要监听SDK OfferWall 用户奖励更新，可通过设置回调</b>
+
+```kotlin
+RXWallApi.setOfferWallRewardListener(object : RXWallRewardListener {
+    override fun onRewardChanged(userId: String, totalReward: Long) {
+        shortToast("$userId reward: $totalReward")
+    }
+ })
+```
+
+注：1、必须设置UserId后才可使用OfferWall用户奖励查询方法；2、SDK不保证用户奖励实时和绝对精准，如需更实时精准的用户奖励，请参考接入S2S；
+
+
 
 ## OfferWall Native
 

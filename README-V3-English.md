@@ -15,6 +15,7 @@
 | 2022-04-10 | 3.0.01 | Add GDPR interface and optimize OfferWall ads |
 | 2023-05-31 | 3.0.05 | Fix known issues and optimize internal logic |
 | 2023-08-14 | 3.0.11 | Fix known issues; add SDK offerwall reward query and callback interface |
+| 2023-08-28 | 3.0.14 | Fix known issues; add new incentive mechanism |
 
 ## How to use
 
@@ -845,7 +846,7 @@ Note：1. The UserId must be set before using the OfferWall user reward query me
 
 <img src="https://github.com/RoulaxTeam/Roulax-Android-SDK/raw/master/img/native.png" width="30%"/>
 
-#### Load ad
+#### Load ad (Suggestion: Based on the developer's application usage scenarios, please request ads as soon as possible after the SDK is successfully initialized to ensure that they can be displayed quickly in ad display scenarios)
 
 ```
  RXSDK.createRXSdkAd().loadOWNative(context, "unit_id", requestNum, object: RXSdkAd.RXOWNativeAdListener {
@@ -932,7 +933,7 @@ Please call setRXOWNativeListener before calling the render method to ensure the
 
 <img src="https://github.com/RoulaxTeam/Roulax-Android-SDK/raw/master/img/flow-icon.png" width="30%"/>
 
-#### Load ad
+#### Load ad (Suggestion: Based on the developer's application usage scenarios, please request ads as soon as possible after the SDK is successfully initialized to ensure that they can be displayed quickly in ad display scenarios)
 
 	RXSDK.createRXSdkAd().loadOWFlowIcon(unitId, new RXSdkAd.RXOWFlowIconAdListener() {
 	    @Override
@@ -1100,7 +1101,7 @@ Please call setRXOWNativeListener before calling the render method to ensure the
 
 <img src="https://github.com/RoulaxTeam/Roulax-Android-SDK/raw/master/img/native-icon.png" width="30%"/>
 
-#### Load ad
+#### Load ad (Suggestion: Based on the developer's application usage scenarios, please request ads as soon as possible after the SDK is successfully initialized to ensure that they can be displayed quickly in ad display scenarios)
 
 	RXSDK.createRXSdkAd().loadOWNativeIcon("unit_id",  object: RXSdkAd.RXOWNativeIconAdListener {
 	        override fun failure(adInfo: RXAdInfo, error: RXError) {

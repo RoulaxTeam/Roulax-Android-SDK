@@ -9,6 +9,7 @@
 | 2022-04-10 | 3.0.01 | 增加GDPR相关接口，优化OfferWall广告 |
 | 2023-05-31 | 3.0.05 | 修复已知问题，优化内部逻辑 |
 | 2023-08-14 | 3.0.11 | 修复已知问题；增加SDK offerwall奖励查询和回调接口 |
+| 2023-08-28 | 3.0.14 | 修复已知问题；增加全新的激励机制 |
 
 
 ## 使用方式
@@ -159,7 +160,7 @@ RXWallApi.setOfferWallRewardListener(object : RXWallRewardListener {
 
 ## OfferWall Native
 
-#### 请求广告
+#### 请求广告（建议：结合开发者应用使用场景，请在SDK初始化成功后，尽快请求广告，保证在广告展示场景能够快速展示）
 
 ```
  RXSDK.createRXSdkAd().loadOWNative(context, "unit_id", requestNum, object: RXSdkAd.RXOWNativeAdListener {
@@ -244,7 +245,7 @@ RXSDK.createRXSdkAd().loadOWNative(context, "unit_id", requestNum, object: RXSdk
 
 ## OfferWall悬浮窗广告
 
-#### 请求广告
+#### 请求广告（建议：结合开发者应用使用场景，请在SDK初始化成功后，尽快请求广告，保证在广告展示场景能够快速展示）
 
 	RXSDK.createRXSdkAd().loadOWFlowIcon(unitId, new RXSdkAd.RXOWFlowIconAdListener() {
 	    @Override
@@ -411,7 +412,7 @@ RXSDK.createRXSdkAd().loadOWNative(context, "unit_id", requestNum, object: RXSdk
 
 ## OfferWall NativeIcon广告
 
-#### 请求广告
+#### 请求广告（建议：结合开发者应用使用场景，请在SDK初始化成功后，尽快请求广告，保证在广告展示场景能够快速展示）
 
 	RXSDK.createRXSdkAd().loadOWNativeIcon("unit_id",  object: RXSdkAd.RXOWNativeIconAdListener {
 	        override fun failure(adInfo: RXAdInfo, error: RXError) {

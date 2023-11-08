@@ -1195,3 +1195,10 @@ Roulax 会收集 Language、设备信息、GAID 这些信息并上报这些数�
 | TopOn| 插屏广告、横幅广告、激励视频、开屏广告、原生广告 | [TopOn-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/adapter/topon/chinese.md) |[TopOn-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_0.0.3-release.aar)|
 | Max  | 插屏、激励视频、Banner | [Max-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/adapter/Max/RSDK-MAX-Chinese.md) |[Max-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max-2.0_release.aar)|
 
+## *After completing the access, please try to see if the following modules can be completed normally, and after ensuring that everything is normal, contact the business classmate for testing before going online.
+### 1.unit displays normally
+### 2. Enter the offerwall interface and see the tasks
+### 3. Click on the task to jump to google play
+### 4. After completing the download of the task, you can see the task you just received in my apps.
+### 5. Click play now to jump to the task application
+### 6. You can get rewards after completing the task requirements.

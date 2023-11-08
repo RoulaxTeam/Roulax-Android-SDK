@@ -463,3 +463,11 @@ If the user is in the EU, the GDPR authorization needs to be set up before the S
 | Parameter | Description |
 | --- | --- |
 | hasAuth | Whether the user agrees to the user agreement and privacy policy, if set to false, the SDK will fail to initialize and not collect user information. |
+
+## *After completing the access, please try to see if the following modules can be completed normally, and after ensuring that everything is normal, contact the business classmate for testing before going online.
+### 1. unit displays normally
+### 2. Enter the offerwall interface and see the tasks
+### 3. Click on the task to jump to google play
+### 4. After completing the download of the task, you can see the task you just received in my apps.
+### 5. Click play now to jump to the task application
+### 6. You can get rewards after completing the task requirements.

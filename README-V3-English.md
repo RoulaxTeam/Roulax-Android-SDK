@@ -1177,3 +1177,11 @@ The former is the latest version of the adapter, if you need a historical versio
 | -------------|:-------------:|:-------------: |:-------------: |
 | TopOn| Interstitial, Banner, RewardVieo, Splash、 Native| [TopOn-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/adapter/topon/english.md) |[TopOn-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/adapter_topon/rad_adapter_topon_0.0.3-release.aar)|
 | Max  | Interstitial, RewardVideo, Banner | [Max-Network-Document](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/adapter/Max/RSDK-MAX-English.md) |[Max-Network-Adapter](https://github.com/RoulaxTeam/Roulax-Android-SDK/releases/download/network_max/rad_adapter_max-2.0_release.aar)|
+
+## *After completing the access, please try to see if the following modules can be completed normally, and after ensuring that everything is normal, contact the business classmate for testing before going online.
+### 1. unit displays normally
+### 2. Enter the offerwall interface and see the tasks
+### 3. Click on the task to jump to google play
+### 4. After completing the download of the task, you can see the task you just received in my apps.
+### 5. Click play now to jump to the task application
+### 6. You can get rewards after completing the task requirements.

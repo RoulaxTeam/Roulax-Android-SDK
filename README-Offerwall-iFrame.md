@@ -10,11 +10,11 @@ The Roulax Offerwall API provides a solution for publishers who want to include 
 
 2.创建你的Unit
 
-![offerwall-iframe-unit](D:\magicstudio\project\Roulax-Android-SDK\img\offerwall-iframe-unit.png)
+![offerwall-iframe-unit](./img/offerwall-iframe-unit.png)
 
 3、创建完成，你可以获取到你的Offerwall集成链接
 
-![offewall-iframe-img](D:\magicstudio\project\Roulax-Android-SDK\img\offewall-iframe-img.png)
+![offewall-iframe-img](./img/offewall-iframe-img.png)
 
 ## JavaScript
 

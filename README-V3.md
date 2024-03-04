@@ -858,6 +858,20 @@ RXWallApi.setOfferWallRewardListener(object : RXWallRewardListener {
 
 
 
+## 权益奖励
+
+<b>如果需要监听SDK 权益奖励的实时兑换，可通过设置回调</b>
+
+```kotlin
+RXWallApi.setOfferWallPrizeRewardListener(object : RXWallPrizeRewardListener {
+     override fun onReward(prizeId: String) {
+         shortToast("Prize reward: $prizeId")
+     }
+})
+```
+
+
+
 ## OfferWall Native
 
 <img src="https://github.com/RoulaxTeam/Roulax-Android-SDK/raw/master/img/native.png" width="30%"/>

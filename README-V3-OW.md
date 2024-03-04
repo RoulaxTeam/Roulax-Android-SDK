@@ -158,6 +158,20 @@ RXWallApi.setOfferWallRewardListener(object : RXWallRewardListener {
 
 
 
+## 权益奖励
+
+<b>如果需要监听SDK 权益奖励的实时兑换，可通过设置回调</b>
+
+```kotlin
+RXWallApi.setOfferWallPrizeRewardListener(object : RXWallPrizeRewardListener {
+     override fun onReward(prizeId: String) {
+         shortToast("Prize reward: $prizeId")
+     }
+})
+```
+
+
+
 ## OfferWall Native
 
 #### 请求广告（建议：结合开发者应用使用场景，请在SDK初始化成功后，尽快请求广告，保证在广告展示场景能够快速展示）

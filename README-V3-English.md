@@ -842,6 +842,20 @@ Note：1. The UserId must be set before using the OfferWall user reward query me
 
 
 
+## Prize Rewards
+
+<b>If you need to monitor the real-time callback of SDK prize rewards, you can set the callback</b>
+
+```kotlin
+RXWallApi.setOfferWallPrizeRewardListener(object : RXWallPrizeRewardListener {
+     override fun onReward(prizeId: String) {
+         shortToast("Prize reward: $prizeId")
+     }
+})
+```
+
+
+
 ## OfferWall Native
 
 <img src="https://github.com/RoulaxTeam/Roulax-Android-SDK/raw/master/img/native.png" width="30%"/>

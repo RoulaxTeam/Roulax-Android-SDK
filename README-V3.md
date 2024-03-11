@@ -58,9 +58,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     
+    \*when apps update their target to Android 13 or above will need to declare a Google Play services normal permission in the manifest file*/
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    
     \*注意: 如果接入OfferWall类型广告，为了计算Offer使用时长，rad_library_ow-core-release.aar中会包含以下权限
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions"/>*/
-
 
 ### SDK混淆规则
 

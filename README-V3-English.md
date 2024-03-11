@@ -56,6 +56,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     
+    \*when apps update their target to Android 13 or above will need to declare a Google Play services normal permission in the manifest file*/
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    
     \*Note: In order to calculate the Offer usage time, the following permissions will be included in rad_library_ow-core-release.aar 
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions"/>*/
 

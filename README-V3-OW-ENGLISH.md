@@ -54,6 +54,25 @@
 	}	
 
 
+
+## Privacy-GDPR
+
+Roulax will collect information such as Language, device information, and GAID and report these data to determine the user ID. If the app needs to be listed on GooglePlay, you need to declare the terms of use on the GooglePlay developer console and in the privacy policy agreement, if you have any questions, please contact the Roulax platform.
+
+**Note**: If the developer's users are in the European Union, they need to set GDPR authorization before the SDK is initialized. If this interface is not called, the SDK will default to not collecting SDK information in the EU-related regions, and the SDK initialization will fail.
+
+	RXSDK.setGDPRAuth(mode RXSDK.GDPRMode)
+
+#### Parameter Description
+
+| Parameter         | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| GDPRMode.Allow    | User agrees to the user agreement and privacy authorization； |
+| GDPRMode.NotAllow | User rejects the user agreement and privacy authorization;   |
+| GDPRMode.Auto     | SDK default value; in relevant EU regions, user information is not collected and SDK initialization fails; |
+
+
+
 ## Initialization
 
 In principle, please keep the initialization operation in the project Application<br>
@@ -463,20 +482,6 @@ Please call setRXOWNativeListener before calling the render method to ensure the
 	            }
 	        }
 	    })
-
-
-## Privacy-GDPR
-Roulax will collect information such as Language, device information, and GAID and report these data to determine the user ID. If the app needs to be listed on GooglePlay, you need to declare the terms of use on the GooglePlay developer console and in the privacy policy agreement, if you have any questions, please contact the Roulax platform.
-
-If the user is in the EU, the GDPR authorization needs to be set up before the SDK initialization. If this interface is not called, the SDK will default the user to agree to the GDPR authorization.
-	
-	RXSDK.setGDPRAuth(hasAuth);
-
-#### Parameter Description
-
-| Parameter | Description |
-| --- | --- |
-| hasAuth | Whether the user agrees to the user agreement and privacy policy, if set to false, the SDK will fail to initialize and not collect user information. |
 
 ## *After completing the access, please try to see if the following modules can be completed normally, and after ensuring that everything is normal, contact the business classmate for testing before going online.
 ### 1. unit displays normally

@@ -10,6 +10,7 @@
 | 2023-05-31 | 3.0.05 | 修复已知问题，优化内部逻辑 |
 | 2023-08-14 | 3.0.11 | 修复已知问题；增加SDK offerwall奖励查询和回调接口 |
 | 2023-08-28 | 3.0.14 | 修复已知问题；增加全新的激励机制 |
+| 2024-03-08 | 3.0.19 | 修复已知问题； |
 
 
 ## 使用方式
@@ -56,13 +57,32 @@
 	}	
 
 
+
+## 隐私-GDPR
+
+Roulax 会收集 Language、设备信息、GAID 这些信息并上报这些数据，用于确定用户ID。如果应用需要上架到 GooglePlay，您需要在 GooglePlay 开发者控制台上和隐私政策协议中声明使用条款，如有疑问，请联系Roulax平台。
+
+**注**：如果开发者的用户在欧盟地区，需要在SDK**初始化之前**设置GDPR授权，如果不调用此接口，SDK将默认在欧盟相关地区不收集信息，SDK初始化失败。
+
+	RXSDK.setGDPRAuth(mode RXSDK.GDPRMode)
+
+#### 参数说明
+
+| 参数              | 含义                                                       |
+| ----------------- | ---------------------------------------------------------- |
+| GDPRMode.Allow    | 用户同意用户协议及隐私授权；                               |
+| GDPRMode.NotAllow | 用户拒绝用户协议及隐私授权；                               |
+| GDPRMode.Auto     | SDK默认值；在欧盟相关地区，不收集用户信息，SDK初始化失败； |
+
+
+
 ## 初始化
 
 原则上请保持在项目Application中进行初始化操作<br>
 如果有GDPR相关需求，需要在用户授权GDPR之后进行初始化。
 
-	//在用户授权GDPR后，将其设置为true。如果用户拒绝授权，将其设置为false。
-	//RXSDK.setGDPRAuth(true);
+	//在用户授权GDPR后，将其设置为Allow
+	RXSDK.setGDPRAuth(RXSDK.GDPRMode.Auto);
 	
 	RXSDK.init(YOU_APPID, object : RXSDK.RXSDKInitListener {
 	    override fun onSDKInitSuccess() {
@@ -100,6 +120,7 @@
 
 
 **注意**：必须在SDK初始化成功回调后进行才能进行Roulax的广告请求，否则会造成无填充；
+
 
 
 ## OfferWall类型广告
@@ -481,19 +502,6 @@ RXSDK.createRXSdkAd().loadOWNative(context, "unit_id", requestNum, object: RXSdk
 	            }
 	        }
 	    })
-
-## 隐私-GDPR
-Roulax 会收集 Language、设备信息、GAID 这些信息并上报这些数据，用于确定用户ID。如果应用需要上架到 GooglePlay，您需要在 GooglePlay 开发者控制台上和隐私政策协议中声明使用条款，如有疑问，请联系Roulax平台。
-
-如果开发者的用户在欧盟地区，需要在SDK初始化之前设置GDPR授权，如果不调用此接口，SDK将默认用户同意GDPR授权。
-	
-	RXSDK.setGDPRAuth(hasAuth);
-
-#### 参数说明
-
-| 参数 | 含义 |
-| --- | --- |
-| hasAuth | 用户是否同意用户协议及隐私授权，如果设置为false，SDK将初始化失败，不收集用户信息。|
 
 ## *完成接入后，请尝试查看以下事项是否能正常完成，确保一切正常后联系业务同学进行测试后再上线。
 ### 1.广告位展示正常

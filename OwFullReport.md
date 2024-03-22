@@ -1,4 +1,8 @@
 # **OwReport**
+
+Request Content
+
+| Request       | value                                              |
 | :-----------  | :------------------------------------------------- |
 | request url   | https://pub-api.roulax.io                          |
 | url path      | /api/external/ow_report                            |
@@ -13,11 +17,11 @@ We will call your endpoint with an `HTTP GET` request and the configured paramet
 | sign         | sign                                           | string   | 95c5b7b27107c11f6200217e6aec0782 | mandatory |
 | sign_t       | sign time  (time stamp)                        | int      | 1694588072                       | mandatory |
 | app_id       | app id    (Supports multiple, separated by English commas when multiple) | int      | 1,2                       | mandatory |
-| start_date   | query start time  (Timestamp format, query range from the current day to the previous 31 days)   | int      | 1694588072                    | mandatory |
-| end_date     | query end time    (Timestamp format, query range from the current day to the previous 31 days)   | int      | 1694588072                    | mandatory |
+| start_date   | query start time  (Timestamp format, query range from the current day to the previous 31 days)   | int      | 20240314                    | mandatory |
+| end_date     | query end time    (Timestamp format, query range from the current day to the previous 31 days)   | int      | 20240315                    | mandatory |
 | unit_id      | unit id    (Supports multiple, separated by English commas when multiple) | string      | 1,2                       | optional |
 | ad_type_id   | unit Advertising slot type (Supports multiple, separated by English commas when multiple) | string      | 1,2                       | optional |
-| country_code | country code (Supports multiple, separated by English commas when multiple) | string      | UA,UK                       | optional |
+| country_code | country code (Supports multiple, separated by English commas when multiple) | string      | date,app_id,unit_id                       | optional |
 | group_on     | data dimension grouping (Supported grouping dimensions:date,app_id,unit_id,ad_type_id,country_code . If this parameter is not passed, the date dimension will be used for grouping by default.) | string      | UA,UK                       | optional |
 | page | current page number (Default 1) | int      | 1                       | optional |
 | page_size | number of pages (Default 50,max 200) | int      | 50                       | optional |

@@ -17,6 +17,7 @@
 | 2023-05-31 | 3.0.05 | 修复已知问题，优化内部逻辑 |
 | 2023-08-14 | 3.0.11 | 修复已知问题；增加SDK offerwall奖励查询和回调接口 |
 | 2023-08-28 | 3.0.14 | 修复已知问题；增加全新的激励机制 |
+| 2024-04-11 | 3.0.21 | 修复已知问题；增加开发者地区货币奖励美元价值比 |
 
 
 ## 使用方式
@@ -854,20 +855,37 @@ NativeIcon广告是Roulax平台特殊的广告形式，该广告可以为开发�
 
 
 
+## 设置用户地区标识
+
+<b>如果需要主动设置用户的地区标识，请调用该接口进行设置，并且可通过联系Roulax运营人员进行配置该地区的货币与美元价值比，SDK会在用户奖励onRewardChanged 的totalAmount返回对应的美元价值数额</b> 
+<b>如果不设置，默认所有地区的货币与美元价值比是相同的</b>
+
+    RXWallApi.setDevArea("US")
+
+
+#### 参数说明
+
+| 参数    | 含义                                                         |
+| ------- | ------------------------------------------------------------ |
+| DevArea | 开发者传入Roulax地区枚举值，详见 [country_code Enum Value](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/OwFullReportEnumValue.md) |
+
+
+
 ## 用户奖励
 
 <b>如果需要通过SDK查询OfferWall的用户奖励，可在设置唯一用户标识后通过RXWallApi.getUserRewarded()进行查询；</b> 
 
 ```kotlin
 val userReward = RXWallApi.getUserRewarded()
+val userAmount = RXWallApi.getUserAmount() // userAmount为userReward对应 地区(dev_area)或用户真实地区 的美元价值
 ```
 
 <b>如果需要监听SDK OfferWall 用户奖励更新，可通过设置回调</b>
 
 ```kotlin
 RXWallApi.setOfferWallRewardListener(object : RXWallRewardListener {
-    override fun onRewardChanged(userId: String, totalReward: Long) {
-        shortToast("$userId reward: $totalReward")
+    override fun onRewardChanged(userId: String, totalReward: Long, totalAmount: Double) {
+        shortToast("$userId reward: $totalReward, amount: $totalAmount")
     }
  })
 ```

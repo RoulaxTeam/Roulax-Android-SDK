@@ -16,6 +16,7 @@
 | 2023-05-31 | 3.0.05 | Fix known issues and optimize internal logic |
 | 2023-08-14 | 3.0.11 | Fix known issues; add SDK offerwall reward query and callback interface |
 | 2023-08-28 | 3.0.14 | Fix known issues; add new incentive mechanism |
+| 2024-04-11 | 3.0.21 | Fixed known issues; increased developer region currency reward dollar value ratio |
 
 ## How to use
 
@@ -842,20 +843,37 @@ Currently only support S2S way to send rewards, client-side rewards callback wil
 
 
 
+## Set user area code
+
+<b>If you need to proactively set the user's region identifier, please call this interface to set it up, and contact Roulax operators to configure the region's currency to U.S. dollar value ratio. The SDK will return the corresponding U.S. dollar value in the totalAmount of the user's reward onRewardChanged. Amount</b> 
+<b>If not set, the default currency-to-USD value ratio in all regions is the same.</b>
+
+    RXWallApi.setDevArea("US")
+
+
+#### Parameters
+
+| Parameter | Description                                                  |
+| --------- | ------------------------------------------------------------ |
+| DevArea   | The developer passes in the Roulax region enumeration value. For details, see [country_code Enum Value](https://github.com/RoulaxTeam/Roulax-Android-SDK/blob/master/OwFullReportEnumValue.md) |
+
+
+
 ## User Rewards
 
 <b>If you need to query OfferWall user rewards through the SDK, you can query through RXWallApi.getUserRewarded() after setting the unique user ID;</b> 
 
 ```kotlin
 val userReward = RXWallApi.getUserRewarded()
+val userAmount = RXWallApi.getUserAmount() // userAmount is the dollar value of userReward’s corresponding area (dev_area) or the user’s real area.
 ```
 
 <b>If you need to monitor SDK OfferWall user reward update, you can set the callback</b>
 
 ```kotlin
 RXWallApi.setOfferWallRewardListener(object : RXWallRewardListener {
-    override fun onRewardChanged(userId: String, totalReward: Long) {
-        shortToast("$userId reward: $totalReward")
+    override fun onRewardChanged(userId: String, totalReward: Long, totalAmount: Double) {
+        shortToast("$userId reward: $totalReward, amount: $totalAmount")
     }
 })
 ```
